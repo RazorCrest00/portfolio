@@ -5,96 +5,221 @@ permalink: /about/
 comments: true
 ---
 
-## As a conversation Starter
+## Places that shaped me
 
-Here are some places I have lived.
-
-<comment>
-Flags are made using Wikipedia images
-</comment>
+From the coast of San Diego to family visits across the country and the world,
+these places are part of my story. This responsive grid is generated from a
+JavaScript data array.
 
 <style>
-    /* Style looks pretty compact, 
-       - grid-container and grid-item are referenced the code 
-    */
-    .grid-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Dynamic columns */
-        gap: 10px;
-    }
-    .grid-item {
-        text-align: center;
-    }
-    .grid-item img {
-        width: 100%;
-        height: 100px; /* Fixed height for uniformity */
-        object-fit: contain; /* Ensure the image fits within the fixed height */
-    }
-    .grid-item p {
-        margin: 5px 0; /* Add some margin for spacing */
+    .flag-story {
+        --flag-ink: #f7f8ff;
+        --flag-muted: #c7cee2;
+        --flag-surface: #151c2c;
+        --flag-line: rgba(199, 206, 226, 0.2);
+        --flag-accent: #ffb45c;
+        margin: 2rem 0 4rem;
     }
 
-    .image-gallery {
+    .flag-story__intro {
         display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        gap: 10px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        color: var(--flag-muted);
+        font-size: 0.9rem;
+    }
+
+    .flag-story__label {
+        color: var(--flag-accent);
+        font-weight: 700;
+    }
+
+    .grid-container {
+        gap: 1rem;
+    }
+
+    .grid-item {
+        min-width: 0;
+        overflow: hidden;
+        border: 1px solid var(--flag-line);
+        border-radius: 14px;
+        background: var(--flag-surface);
+        color: var(--flag-ink);
+        box-shadow: 0 12px 30px rgba(2, 6, 18, 0.22);
+        transition: transform 180ms ease-out, border-color 180ms ease-out;
+    }
+
+    .grid-item:hover {
+        transform: translateY(-4px);
+        border-color: rgba(255, 180, 92, 0.62);
+    }
+
+    .grid-item__flag-wrap {
+        display: grid;
+        place-items: center;
+        min-height: 9.25rem;
+        padding: 1.25rem;
+        background: #f7f8fb;
+    }
+
+    .grid-item img {
+        display: block;
+        width: 100%;
+        height: 7rem;
+        object-fit: contain;
+    }
+
+    .grid-item__copy {
+        padding: 1.15rem 1.2rem 1.3rem;
+    }
+
+    .grid-item__place,
+    .grid-item__greeting,
+    .grid-item__description {
+        margin: 0;
+    }
+
+    .grid-item__place {
+        color: var(--flag-muted);
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+    }
+
+    .grid-item__greeting {
+        margin-top: 0.25rem;
+        color: var(--flag-ink);
+        font-size: clamp(1.35rem, 4vw, 1.75rem);
+        font-weight: 750;
+        line-height: 1.15;
+    }
+
+    .grid-item__description {
+        margin-top: 0.65rem;
+        color: var(--flag-muted);
+        line-height: 1.55;
+    }
+
+    .flag-story__fallback {
+        padding: 1rem;
+        border: 1px solid var(--flag-line);
+        border-radius: 14px;
+        color: var(--flag-muted);
+    }
+
+    @media (max-width: 560px) {
+        .flag-story__intro {
+            align-items: flex-start;
+            flex-direction: column;
         }
 
-    .image-gallery img {
-        max-height: 150px;
-        object-fit: cover;
-        border-radius: 5px;
+        .grid-item__flag-wrap {
+            min-height: 8rem;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .grid-item {
+            transition: none;
+        }
+
+        .grid-item:hover {
+            transform: none;
+        }
     }
 </style>
 
-<!-- This grid_container class is used by CSS styling and the id is used by JavaScript connection -->
-<div class="grid-container" id="grid_container">
-    <!-- content will be added here by JavaScript -->
-</div>
+<section class="flag-story" aria-labelledby="flag-grid-heading">
+    <div class="flag-story__intro">
+        <span id="flag-grid-heading" class="flag-story__label">Built with JavaScript + CSS Grid</span>
+        <span>3 meaningful places · 1 connected story</span>
+    </div>
+
+    <!-- JavaScript creates #grid_container and every flag card inside this mount point. -->
+    <div id="flag_grid_mount"></div>
+    <noscript>
+        <p class="flag-story__fallback">Enable JavaScript to view Adhvay's interactive flag grid.</p>
+    </noscript>
+</section>
 
 <script>
-    // 1. Make a connection to the HTML container defined in the HTML div
-    var container = document.getElementById("grid_container"); // This container connects to the HTML div
+    (() => {
+        const outputElement = document.getElementById("flag_grid_mount");
+        if (!outputElement) return;
 
-    // 2. Define a JavaScript object for our http source and our data rows for the Living in the World grid
-    var http_source = "https://upload.wikimedia.org/wikipedia/commons/";
-    var living_in_the_world = [
-        {"flag": "0/01/Flag_of_California.svg", "greeting": "Hey", "description": "California - forever"},
-        {"flag": "b/b9/Flag_of_Oregon.svg", "greeting": "Hi", "description": "Oregon - 9 years"},
-        {"flag": "b/be/Flag_of_England.svg", "greeting": "Alright mate", "description": "England - 2 years"},
-        {"flag": "e/ef/Flag_of_Hawaii.svg", "greeting": "Aloha", "description": "Hawaii - 2 years"},
-    ];
+        // A data array keeps the content separate from the DOM-building logic.
+        const living_in_the_world = [
+            {
+                place: "San Diego, California",
+                flag: "https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_San_Diego%2C_California.svg",
+                flagAlt: "City flag of San Diego, California",
+                greeting: "Hello!",
+                description: "I was born and raised in San Diego, and it will always be my home city."
+            },
+            {
+                place: "Bengaluru, India",
+                flag: "https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_India.svg",
+                flagAlt: "National flag of India",
+                greeting: "Namaskāra!",
+                description: "My paternal grandparents live in Bengaluru, and I have visited many times."
+            },
+            {
+                place: "Cary, North Carolina",
+                flag: "https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_North_Carolina.svg",
+                flagAlt: "State flag of North Carolina",
+                greeting: "Hi!",
+                description: "My cousins live in Cary, so my family and I visit often."
+            }
+        ];
 
-    // 3a. Consider how to update style count for size of container
-    // The grid-template-columns has been defined as dynamic with auto-fill and minmax
+        outputElement.innerHTML = "";
 
-    // 3b. Build grid items inside of our container for each row of data
-    for (const location of living_in_the_world) {
-        // Create a "div" with "class grid-item" for each row
-        var gridItem = document.createElement("div");
-        gridItem.className = "grid-item";  // This class name connects the gridItem to the CSS style elements
-        // Add "img" HTML tag for the flag
-        var img = document.createElement("img");
-        img.src = http_source + location.flag; // concatenate the source and flag
-        img.alt = location.flag + " Flag"; // add alt text for accessibility
+        // Create and style the responsive grid container with JavaScript.
+        const container = document.createElement("div");
+        container.id = "grid_container";
+        container.className = "grid-container";
+        container.style.display = "grid";
+        container.style.gridTemplateColumns = "repeat(auto-fit, minmax(min(100%, 220px), 1fr))";
 
-        // Add "p" HTML tag for the description
-        var description = document.createElement("p");
-        description.textContent = location.description; // extract the description
+        for (const location of living_in_the_world) {
+            const gridItem = document.createElement("article");
+            gridItem.className = "grid-item";
 
-        // Add "p" HTML tag for the greeting
-        var greeting = document.createElement("p");
-        greeting.textContent = location.greeting;  // extract the greeting
+            const flagWrap = document.createElement("div");
+            flagWrap.className = "grid-item__flag-wrap";
 
-        // Append img and p HTML tags to the grid item DIV
-        gridItem.appendChild(img);
-        gridItem.appendChild(description);
-        gridItem.appendChild(greeting);
+            const image = document.createElement("img");
+            image.src = location.flag;
+            image.alt = location.flagAlt;
+            image.loading = "lazy";
+            image.decoding = "async";
 
-        // Append the grid item DIV to the container DIV
-        container.appendChild(gridItem);
-    }
+            const copy = document.createElement("div");
+            copy.className = "grid-item__copy";
+
+            const place = document.createElement("p");
+            place.className = "grid-item__place";
+            place.textContent = location.place;
+
+            const greeting = document.createElement("p");
+            greeting.className = "grid-item__greeting";
+            greeting.textContent = location.greeting;
+
+            const description = document.createElement("p");
+            description.className = "grid-item__description";
+            description.textContent = location.description;
+
+            flagWrap.appendChild(image);
+            copy.append(place, greeting, description);
+            gridItem.append(flagWrap, copy);
+            container.appendChild(gridItem);
+        }
+
+        outputElement.appendChild(container);
+    })();
 </script>
 
 ### Journey through Life
