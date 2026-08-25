@@ -5,7 +5,12 @@
   </div>
   {% endif %}
 
-  <textarea class="editor-textarea"></textarea>
+  <textarea
+    class="editor-textarea"
+    aria-label="Editable starter code"
+    rows="16"
+    spellcheck="false"
+  >{{ include.initial_code | escape }}</textarea>
 
   {% if include.bottom_controls %}
   <div class="control-panel">

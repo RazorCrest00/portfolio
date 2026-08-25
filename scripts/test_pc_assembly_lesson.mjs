@@ -12,6 +12,9 @@ const executorPath = path.join(repositoryRoot, 'assets/js/pages/runners/executor
 const pyodideExecutorPath = path.join(repositoryRoot, 'assets/js/pages/runners/executors/PyodideExecutor.js');
 const languageVariantManagerPath = path.join(repositoryRoot, 'assets/js/pages/runners/core/LanguageVariantManager.js');
 const codeRunnerIncludePath = path.join(repositoryRoot, '_includes/runners/code.html');
+const uiRunnerIncludePath = path.join(repositoryRoot, '_includes/runners/ui.html');
+const editorContainerPath = path.join(repositoryRoot, '_includes/runners/fragments/editor-container.html');
+const editorManagerPath = path.join(repositoryRoot, 'assets/js/pages/runners/core/EditorManager.js');
 const variantsPath = path.join(repositoryRoot, '_data/pc_assembly_runner_variants.yml');
 const lesson = readFileSync(lessonPath, 'utf8');
 
@@ -349,6 +352,18 @@ assert.match(codeRunnerInclude, /data-python-code=/);
 assert.match(codeRunnerInclude, /data-java-code=/);
 assert.match(codeRunnerInclude, /data-pseudocode-code=/);
 assert.match(codeRunnerInclude, /languageVariants\?\.switchTo\(lang\)/);
+assert.match(codeRunnerInclude, /initial_code=include\.code/);
+
+const uiRunnerInclude = readFileSync(uiRunnerIncludePath, 'utf8');
+assert.match(uiRunnerInclude, /initial_code=include\.code/);
+
+const editorContainer = readFileSync(editorContainerPath, 'utf8');
+assert.match(editorContainer, /aria-label="Editable starter code"/);
+assert.match(editorContainer, /\{\{ include\.initial_code \| escape \}\}/);
+
+const editorManagerSource = readFileSync(editorManagerPath, 'utf8');
+assert.match(editorManagerSource, /const prefilledCode = textarea\.value/);
+assert.match(editorManagerSource, /initialCode \|\| prefilledCode \|\| fallbackCode/);
 
 const managerSource = readFileSync(languageVariantManagerPath, 'utf8');
 const managerModule = await import(
@@ -429,4 +444,4 @@ assert.match(browserPythonTime.textContent, /\(browser\)$/);
 delete globalThis.loadPyodide;
 delete globalThis.localStorage;
 
-console.log('PC assembly lesson checks passed: 12 three-language runners, JavaScript prototype, and browser Python.');
+console.log('PC assembly lesson checks passed: prefilled editable runners, 12 three-language runners, JavaScript prototype, and browser Python.');
