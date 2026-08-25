@@ -16,3 +16,14 @@
 - Pass: the inline JavaScript still parses after the content and style additions.
 - Pass: `git diff --check` found no whitespace errors.
 - Expected intermediate state: 2 checklist items remain open until the photo/third-commit phase.
+
+## 2026-08-25 — Section 3
+
+- Pass: the third `make` workflow completed, including 19 notebook conversions, course splitting, project documentation builds, and Jekyll startup.
+- Pass: the built gallery contains exactly 4 images and 4 captions, with no missing alternative text or intrinsic dimensions.
+- Pass: all 8 Exemplar checklist items render checked.
+- Pass: all four published JPEGs decode with the expected dimensions and non-black luminance values.
+- Pass: all four published images have 0 EXIF entries; their original files were not modified.
+- Pass: no template gallery filename or generic numbered image description remains in `navigation/about.md`.
+- Pass: JavaScript syntax and `git diff --check` remain clean.
+- Pass: the required one-time Impeccable detector returned an empty findings list.

@@ -38,7 +38,8 @@ JavaScript data array.
     .flag-story,
     .journey-timeline,
     .interest-story,
-    .evidence-panel {
+    .evidence-panel,
+    .photo-story {
         --about-ink: #f7f8ff;
         --about-muted: #c7cee2;
         --about-surface: #151c2c;
@@ -316,6 +317,65 @@ JavaScript data array.
         margin: 0.6rem 0;
     }
 
+    .photo-story {
+        margin: 2rem 0 5rem;
+    }
+
+    .image-gallery {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(1rem, 3vw, 1.6rem);
+        align-items: start;
+        margin-top: 1.5rem;
+    }
+
+    .gallery-item {
+        min-width: 0;
+        margin: 0;
+    }
+
+    .gallery-item img {
+        display: block;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 14px;
+        background: var(--about-surface);
+        box-shadow: 0 14px 34px rgba(2, 6, 18, 0.25);
+    }
+
+    .gallery-item--snowboarding img {
+        aspect-ratio: 2 / 3;
+    }
+
+    .gallery-item--coco img {
+        aspect-ratio: 1 / 1;
+    }
+
+    .gallery-item--sister img {
+        aspect-ratio: 3 / 4;
+    }
+
+    .gallery-item--ramen img {
+        aspect-ratio: 4 / 3;
+    }
+
+    .gallery-item figcaption {
+        display: grid;
+        gap: 0.2rem;
+        padding: 0.75rem 0.15rem 0;
+    }
+
+    .gallery-item figcaption strong {
+        color: var(--about-ink);
+        font-size: 0.96rem;
+    }
+
+    .gallery-item figcaption span {
+        color: var(--about-muted);
+        font-size: 0.86rem;
+        line-height: 1.5;
+    }
+
     @media (max-width: 560px) {
         .flag-story__intro {
             align-items: flex-start;
@@ -334,6 +394,14 @@ JavaScript data array.
         .interest-story > ul > li:nth-child(even) {
             padding-right: 0;
             padding-left: 0;
+        }
+
+        .image-gallery {
+            grid-template-columns: 1fr;
+        }
+
+        .gallery-item img {
+            max-height: 34rem;
         }
     }
 
@@ -486,26 +554,77 @@ This page is designed to earn that result through visible, verifiable work—not
 - [x] CSS Grid uses responsive columns that adapt without horizontal overflow.
 - [x] Markdown presents a specific, chronological personal journey and interests.
 - [x] Accessibility includes semantic sections, descriptive image text, and reduced-motion support.
-- [ ] Four original, personalized gallery images replace the template photos.
-- [ ] Three focused SDLC commits each include a build and verification step.
+- [x] Four original, personalized gallery images replace the template photos.
+- [x] Three focused SDLC commits each include a build and verification step.
 
 </section>
 
+<section class="photo-story" markdown="1">
+
 ## Moments off-screen
 
-The final gallery will feature four snapshots of the people, activities, pets, and food that make me happy.
+These four snapshots capture the people, activities, pets, and food that make me happy.
 
 <div class="image-gallery">
-  <img src="{{site.baseurl}}/images/about/missionary.jpg" alt="Image 1">
-  <img src="{{site.baseurl}}/images/about/john_tamara.jpg" alt="Image 2">
-  <img src="{{site.baseurl}}/images/about/tamara_fam.jpg" alt="Image 3">
-  <img src="{{site.baseurl}}/images/about/surf.jpg" alt="Image 4">
-  <img src="{{site.baseurl}}/images/about/john_lora.jpg" alt="Image 5">
-  <img src="{{site.baseurl}}/images/about/lora_fam.jpg" alt="Image 6">
-  <img src="{{site.baseurl}}/images/about/lora_fam2.jpg" alt="Image 7">
-  <img src="{{site.baseurl}}/images/about/pj_party.jpg" alt="Image 8">
-  <img src="{{site.baseurl}}/images/about/trent_family.png" alt="Image 9">
-  <img src="{{site.baseurl}}/images/about/claire.jpg" alt="Image 10">
-  <img src="{{site.baseurl}}/images/about/grandkids.jpg" alt="Image 11">
-  <img src="{{site.baseurl}}/images/about/farm.jpg" alt="Image 12">
+    <figure class="gallery-item gallery-item--snowboarding">
+        <img
+            src="{{site.baseurl}}/images/about/adhvay-snowboarding.jpg"
+            alt="Adhvay carving down a snowy slope on a snowboard at night"
+            width="1200"
+            height="1800"
+            loading="lazy"
+            decoding="async"
+        >
+        <figcaption>
+            <strong>Me snowboarding</strong>
+            <span>A cold night, a fast turn, and one of my favorite outdoor challenges.</span>
+        </figcaption>
+    </figure>
+
+    <figure class="gallery-item gallery-item--coco">
+        <img
+            src="{{site.baseurl}}/images/about/coco.jpg"
+            alt="Coco wearing a pink unicorn hood while resting on a couch"
+            width="1645"
+            height="1800"
+            loading="lazy"
+            decoding="async"
+        >
+        <figcaption>
+            <strong>Coco, my dog</strong>
+            <span>My favorite four-legged family member in an unforgettable unicorn outfit.</span>
+        </figcaption>
+    </figure>
+
+    <figure class="gallery-item gallery-item--sister">
+        <img
+            src="{{site.baseurl}}/images/about/sister-and-coco.jpg"
+            alt="Adhvay's younger sister smiling while holding Coco as a puppy"
+            width="768"
+            height="1024"
+            loading="lazy"
+            decoding="async"
+        >
+        <figcaption>
+            <strong>My sister holding Coco when Coco was young</strong>
+            <span>A small puppy and a very happy big sister.</span>
+        </figcaption>
+    </figure>
+
+    <figure class="gallery-item gallery-item--ramen">
+        <img
+            src="{{site.baseurl}}/images/about/favorite-ramen.jpg"
+            alt="A bowl of spicy ramen topped with mushrooms, greens, and cilantro"
+            width="1024"
+            height="768"
+            loading="lazy"
+            decoding="async"
+        >
+        <figcaption>
+            <strong>Ramen, one of my favorite foods</strong>
+            <span>Warm, spicy, and always worth making room for.</span>
+        </figcaption>
+    </figure>
 </div>
+
+</section>

@@ -19,3 +19,13 @@
 - Result: passed; the built page contains the expected hero, 8 journey entries, 8 interest entries, and 8 rubric items.
 - Known intermediate state: the two unchecked rubric items and template gallery files are intentionally reserved for Section 3.
 - Next verified task: prepare and install Adhvay's four original photos, then complete the gallery and final checklist.
+
+## 2026-08-25 — Section 3: Personalized photo gallery
+
+- Task: Replace all template gallery references with Adhvay's four original photos and complete the assignment evidence.
+- Files changed: `navigation/about.md`, four new files in `images/about/`, and the SDLC reports.
+- Implementation: responsive figure gallery, personalized captions, descriptive alternative text, intrinsic dimensions, lazy decoding, and four optimized progressive JPEGs.
+- Privacy and compatibility: converted the HEIC source for browser support and removed all EXIF metadata from the published copies; the originals remain unchanged.
+- Tests run: third repository `make` workflow, built HTML gallery audit, image decode/dimension/luminance checks, metadata check, template-reference search, JavaScript syntax validation, whitespace validation, and the Impeccable detector.
+- Result: passed; all 4 images decode correctly, all 4 captions render, every image has alt text and dimensions, all 8 rubric items are checked, and the detector returned no findings.
+- Next verified task: inspect the final diff and three-commit history.
