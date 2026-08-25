@@ -287,45 +287,85 @@ JavaScript data array.
     }
 
     .photo-story {
+        min-width: 0;
+        max-width: 100%;
         margin: 2rem 0 5rem;
+    }
+
+    .gallery-intro {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .gallery-intro p {
+        max-width: 68ch;
+        margin: 0;
+    }
+
+    .gallery-scroll-hint {
+        flex: 0 0 auto;
+        color: var(--about-accent);
+        font-size: 0.86rem;
+        font-weight: 700;
     }
 
     .image-gallery {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-flow: column;
+        grid-auto-columns: clamp(17rem, 68vw, 25rem);
+        grid-template-columns: none;
         gap: clamp(1rem, 3vw, 1.6rem);
         align-items: start;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
         margin-top: 1.5rem;
+        padding: 0.25rem 0.15rem 1rem;
+        scroll-padding-inline: 0.15rem;
+        scroll-snap-type: inline mandatory;
+        scrollbar-color: rgba(255, 180, 92, 0.75) rgba(199, 206, 226, 0.12);
+        scrollbar-width: thin;
+        overscroll-behavior-inline: contain;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .image-gallery:focus-visible {
+        outline: 3px solid var(--about-accent);
+        outline-offset: 5px;
+    }
+
+    .image-gallery::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .image-gallery::-webkit-scrollbar-track {
+        border-radius: 999px;
+        background: rgba(199, 206, 226, 0.12);
+    }
+
+    .image-gallery::-webkit-scrollbar-thumb {
+        border-radius: 999px;
+        background: rgba(255, 180, 92, 0.75);
     }
 
     .gallery-item {
         min-width: 0;
         margin: 0;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
     }
 
     .gallery-item img {
         display: block;
         width: 100%;
-        object-fit: cover;
+        height: clamp(16rem, 38vw, 24rem);
+        object-fit: contain;
         border-radius: 14px;
-        background: var(--about-surface);
+        background: #0b1019;
         box-shadow: 0 14px 34px rgba(2, 6, 18, 0.25);
-    }
-
-    .gallery-item--snowboarding img {
-        aspect-ratio: 2 / 3;
-    }
-
-    .gallery-item--coco img {
-        aspect-ratio: 1 / 1;
-    }
-
-    .gallery-item--sister img {
-        aspect-ratio: 3 / 4;
-    }
-
-    .gallery-item--ramen img {
-        aspect-ratio: 4 / 3;
     }
 
     .gallery-item figcaption {
@@ -365,12 +405,21 @@ JavaScript data array.
             padding-left: 0;
         }
 
+        .gallery-intro {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        .gallery-scroll-hint {
+            font-size: 0.82rem;
+        }
+
         .image-gallery {
-            grid-template-columns: 1fr;
+            grid-auto-columns: min(82vw, 19rem);
         }
 
         .gallery-item img {
-            max-height: 34rem;
+            height: min(62vh, 22rem);
         }
     }
 
@@ -569,9 +618,12 @@ SDLC evidence, this implementation provides direct evidence for every one of tho
 
 ## Moments off-screen
 
-These four snapshots capture the people, activities, pets, and food that make me happy.
+<div class="gallery-intro">
+    <p>These four snapshots capture the people, activities, pets, and food that make me happy.</p>
+    <span class="gallery-scroll-hint">Scroll to explore <span aria-hidden="true">→</span></span>
+</div>
 
-<div class="image-gallery">
+<div class="image-gallery" role="region" aria-label="Adhvay's photo gallery. Use the left and right arrow keys to browse." tabindex="0">
     <figure class="gallery-item gallery-item--snowboarding">
         <img
             src="{{site.baseurl}}/images/about/adhvay-snowboarding.jpg"
@@ -632,5 +684,24 @@ These four snapshots capture the people, activities, pets, and food that make me
         </figcaption>
     </figure>
 </div>
+
+<script>
+    (() => {
+        const gallery = document.querySelector(".image-gallery");
+        if (!gallery) return;
+
+        gallery.addEventListener("keydown", (event) => {
+            if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+
+            event.preventDefault();
+            const direction = event.key === "ArrowRight" ? 1 : -1;
+            const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            gallery.scrollBy({
+                left: direction * gallery.clientWidth * 0.82,
+                behavior: reducedMotion ? "auto" : "smooth"
+            });
+        });
+    })();
+</script>
 
 </section>
