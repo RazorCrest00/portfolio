@@ -1,9 +1,25 @@
 <!-- Reusable Code Runner Component -->
+{% assign selected_variants = site.data.pc_assembly_runner_variants[include.variants_key] %}
+{% assign python_code = include.python_code | default: selected_variants.python %}
+{% assign java_code = include.java_code | default: selected_variants.java %}
+{% assign javascript_code = include.javascript_code | default: selected_variants.javascript %}
+{% assign pseudocode_code = include.pseudocode_code | default: selected_variants.pseudocode %}
+{% if include.variants_key and pseudocode_code == nil %}
+  {% assign pseudocode_code = include.code %}
+{% endif %}
+{% assign has_code_variants = false %}
+{% if python_code or java_code or javascript_code or pseudocode_code %}
+  {% assign has_code_variants = true %}
+{% endif %}
 <div class="code-runner-container"
   id="runner-{{ include.runner_id }}"
   data-runner-id="{{ include.runner_id }}"
   data-default-code="{{ include.code | jsonify | escape }}"
-  data-storage-key="{{ page.permalink | replace: '/', '_' }}_{{ include.runner_id }}">
+  data-storage-key="{{ page.permalink | replace: '/', '_' }}_{{ include.runner_id }}"
+  {% if python_code %}data-python-code="{{ python_code | jsonify | escape }}"{% endif %}
+  {% if java_code %}data-java-code="{{ java_code | jsonify | escape }}"{% endif %}
+  {% if javascript_code %}data-javascript-code="{{ javascript_code | jsonify | escape }}"{% endif %}
+  {% if pseudocode_code %}data-pseudocode-code="{{ pseudocode_code | jsonify | escape }}"{% endif %}>
   {% capture code_runner_title %}Code Runner Challenge {% if include.challenge_number %}#{{ include.challenge_number }}{% endif %}{% endcapture %}
   {% include runners/fragments/challenge-box.html title=code_runner_title challenge=include.challenge %}
 
@@ -23,11 +39,18 @@
       <button type="button" class="copyBtn" title="Copy Code">⎘</button>
       <button type="button" class="saveBtn" title="Save Code">💾</button>
       <button type="button" class="clearStorageBtn" title="Clear Storage">🗑</button>
-      <select class="languageSelect">
-        <option value="python">Python</option>
-        <option value="java">Java</option>
-        <option value="javascript">JavaScript</option>
-        <option value="pseudocode">Pseudocode</option>
+      <select class="languageSelect" aria-label="Runner language"{% if include.lock_language %} disabled title="This example is written in {{ include.language }}"{% endif %}>
+        {% if has_code_variants %}
+          {% if python_code %}<option value="python"{% if include.language == "python" %} selected{% endif %}>Python</option>{% endif %}
+          {% if java_code %}<option value="java"{% if include.language == "java" %} selected{% endif %}>Java</option>{% endif %}
+          {% if javascript_code %}<option value="javascript"{% if include.language == "javascript" %} selected{% endif %}>JavaScript</option>{% endif %}
+          {% if pseudocode_code %}<option value="pseudocode"{% if include.language == "pseudocode" %} selected{% endif %}>Pseudocode</option>{% endif %}
+        {% else %}
+          <option value="python">Python</option>
+          <option value="java">Java</option>
+          <option value="javascript">JavaScript</option>
+          <option value="pseudocode">Pseudocode</option>
+        {% endif %}
       </select>
       <select class="fontSizeSelect">
         <option value="14">14px</option>
@@ -108,7 +131,7 @@ if (typeof CodeMirror !== 'undefined' && !CodeMirror.modes['pseudocode']) {
 </script>
 
 <script type="module">
-import { BaseRunner, CodeExecutor, PseudocodeExecutor } from '{{site.baseurl}}/assets/js/pages/runners/index.js';
+import { BaseRunner, CodeExecutor, PseudocodeExecutor, PyodideExecutor, LanguageVariantManager } from '{{site.baseurl}}/assets/js/pages/runners/index.js';
 import { pythonURI, javaURI, fetchOptions } from '{{site.baseurl}}/assets/js/api/config.js';
 
 (function() {
@@ -116,6 +139,7 @@ import { pythonURI, javaURI, fetchOptions } from '{{site.baseurl}}/assets/js/api
   if (!container) return;
   
   const initialLang = "{{ include.language }}";
+  const useLocalPython = {{ include.local_python | default: false | jsonify }};
   const defaultCode = JSON.parse(container.dataset.defaultCode || "\"\"");
   const editorHeight = "{{ include.height }}";
   const storageKey = container.dataset.storageKey;
@@ -154,17 +178,45 @@ import { pythonURI, javaURI, fetchOptions } from '{{site.baseurl}}/assets/js/api
     execTimeElement: execTimeSpan,
   });
 
+  const localPythonExecutor = useLocalPython ? new PyodideExecutor({
+    outputElement: outputDiv,
+    execTimeElement: execTimeSpan,
+  }) : null;
+
+  const codeVariants = {};
+  ["python", "java", "javascript", "pseudocode"].forEach((language) => {
+    const encodedSource = container.dataset[`${language}Code`];
+    if (encodedSource) codeVariants[language] = JSON.parse(encodedSource);
+  });
+
+  const languageVariants = Object.keys(codeVariants).length
+    ? new LanguageVariantManager({
+        editor,
+        languageSelect: langSelect,
+        variants: codeVariants,
+        storageKey,
+        initialLanguage: initialLang,
+      })
+    : null;
+
   // Set initial language selection
-  if (initialLang) {
+  if (languageVariants) {
+    languageVariants.activateInitial();
+  } else if (initialLang) {
     langSelect.value = initialLang;
   }
 
   runner.bindEditorButtons({
     resetValue: defaultCode || "print('Hello, world!')",
     onClear: () => {
+      if (languageVariants) {
+        languageVariants.clearAll();
+        languageVariants.resetCurrent();
+      }
       outputDiv.textContent = 'Storage cleared. Code reset to default.';
       execTimeSpan.textContent = '';
-    }
+    },
+    onSave: () => languageVariants?.saveCurrent(),
   });
 
   // Font size changer
@@ -193,7 +245,9 @@ import { pythonURI, javaURI, fetchOptions } from '{{site.baseurl}}/assets/js/api
   // Language switcher
   langSelect.addEventListener("change", () => {
     const lang = langSelect.value;
-    if (lang === "python") {
+    if (languageVariants?.switchTo(lang)) {
+      return;
+    } else if (lang === "python") {
       editor.setOption("mode", "python");
     } else if (lang === "java") {
       editor.setOption("mode", "text/x-java");
@@ -210,6 +264,9 @@ import { pythonURI, javaURI, fetchOptions } from '{{site.baseurl}}/assets/js/api
   function runCode() {
     if (langSelect.value === "pseudocode") {
       return pseudoExecutor.run(editor.getValue());
+    }
+    if (langSelect.value === "python" && localPythonExecutor) {
+      return localPythonExecutor.run(editor.getValue());
     }
     return codeExecutor.run();
   }

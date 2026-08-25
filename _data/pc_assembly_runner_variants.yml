@@ -1,0 +1,376 @@
+output:
+  python: |
+    current_part = "CPU"
+    target_slot = "CPU socket"
+
+    print("Current part:", current_part)
+    print("Install in:", target_slot)
+  java: |
+    public class Main {
+        public static void main(String[] args) {
+            String currentPart = "CPU";
+            String targetSlot = "CPU socket";
+
+            System.out.println("Current part: " + currentPart);
+            System.out.println("Install in: " + targetSlot);
+        }
+    }
+
+input:
+  python: |
+    # These sample values represent the builder's input.
+    selected_part = "CPU"
+    selected_slot = "CPU socket"
+
+    print("Selected part:", selected_part)
+    print("Selected destination:", selected_slot)
+  java: |
+    public class Main {
+        public static void main(String[] args) {
+            // These sample values represent the builder's input.
+            String selectedPart = "CPU";
+            String selectedSlot = "CPU socket";
+
+            System.out.println("Selected part: " + selectedPart);
+            System.out.println("Selected destination: " + selectedSlot);
+        }
+    }
+
+list:
+  python: |
+    parts = ["CPU", "RAM", "M.2 SSD", "CPU cooler", "Motherboard", "Power supply", "Graphics card", "Power cables"]
+
+    print("Parts in this build:", len(parts))
+    for part in parts:
+        print(part)
+  java: |
+    public class Main {
+        public static void main(String[] args) {
+            String[] parts = {"CPU", "RAM", "M.2 SSD", "CPU cooler", "Motherboard", "Power supply", "Graphics card", "Power cables"};
+
+            System.out.println("Parts in this build: " + parts.length);
+            for (String part : parts) {
+                System.out.println(part);
+            }
+        }
+    }
+
+procedure:
+  python: |
+    def is_correct_target(part_name, target_name):
+        return part_name == "CPU" and target_name == "CPU socket"
+
+    correct_placement = is_correct_target("CPU", "CPU socket")
+    print("Correct placement:", correct_placement)
+  java: |
+    public class Main {
+        static boolean isCorrectTarget(String partName, String targetName) {
+            return partName.equals("CPU") && targetName.equals("CPU socket");
+        }
+
+        public static void main(String[] args) {
+            boolean correctPlacement = isCorrectTarget("CPU", "CPU socket");
+            System.out.println("Correct placement: " + correctPlacement);
+        }
+    }
+
+sequence:
+  python: |
+    step = 1
+    print("Step " + str(step) + ": Seat the CPU")
+
+    step += 1
+    print("Step " + str(step) + ": Install the RAM")
+
+    step += 1
+    print("Step " + str(step) + ": Install the M.2 SSD")
+
+    step += 1
+    print("Step " + str(step) + ": Mount the CPU cooler")
+  java: |
+    public class Main {
+        public static void main(String[] args) {
+            int step = 1;
+            System.out.println("Step " + step + ": Seat the CPU");
+
+            step++;
+            System.out.println("Step " + step + ": Install the RAM");
+
+            step++;
+            System.out.println("Step " + step + ": Install the M.2 SSD");
+
+            step++;
+            System.out.println("Step " + step + ": Mount the CPU cooler");
+        }
+    }
+
+selection:
+  python: |
+    expected_part = "CPU"
+    selected_part = "CPU"
+
+    if selected_part == expected_part:
+        print("Correct! " + selected_part + " snapped into place.")
+    else:
+        print("Incorrect. " + selected_part + " returned to the parts tray.")
+        print("Install " + expected_part + " first.")
+  java: |
+    public class Main {
+        public static void main(String[] args) {
+            String expectedPart = "CPU";
+            String selectedPart = "CPU";
+
+            if (selectedPart.equals(expectedPart)) {
+                System.out.println("Correct! " + selectedPart + " snapped into place.");
+            } else {
+                System.out.println("Incorrect. " + selectedPart + " returned to the parts tray.");
+                System.out.println("Install " + expectedPart + " first.");
+            }
+        }
+    }
+
+iteration:
+  python: |
+    parts = ["CPU", "RAM", "M.2 SSD", "CPU cooler", "Motherboard", "Power supply", "Graphics card", "Power cables"]
+
+    for step, part in enumerate(parts, start=1):
+        print("Step " + str(step) + ": Install " + part)
+  java: |
+    public class Main {
+        public static void main(String[] args) {
+            String[] parts = {"CPU", "RAM", "M.2 SSD", "CPU cooler", "Motherboard", "Power supply", "Graphics card", "Power cables"};
+            int step = 1;
+
+            for (String part : parts) {
+                System.out.println("Step " + step + ": Install " + part);
+                step++;
+            }
+        }
+    }
+
+algorithm:
+  python: |
+    def assemble_computer(parts, selected_parts):
+        installed_count = 0
+        step = 0
+
+        for selected_part in selected_parts:
+            expected_part = parts[step]
+            if selected_part == expected_part:
+                print(selected_part + " installed correctly.")
+                installed_count += 1
+                step += 1
+            else:
+                print(selected_part + " returned. Next part is " + expected_part + ".")
+
+        return installed_count
+
+    parts = ["CPU", "RAM", "M.2 SSD", "CPU cooler"]
+    attempts = ["Graphics card", "CPU", "RAM", "M.2 SSD", "CPU cooler"]
+    installed = assemble_computer(parts, attempts)
+    print("Installed correctly:", installed, "of", len(parts))
+  java: |
+    public class Main {
+        static int assembleComputer(String[] parts, String[] selectedParts) {
+            int installedCount = 0;
+            int step = 0;
+
+            for (String selectedPart : selectedParts) {
+                String expectedPart = parts[step];
+                if (selectedPart.equals(expectedPart)) {
+                    System.out.println(selectedPart + " installed correctly.");
+                    installedCount++;
+                    step++;
+                } else {
+                    System.out.println(selectedPart + " returned. Next part is " + expectedPart + ".");
+                }
+            }
+            return installedCount;
+        }
+
+        public static void main(String[] args) {
+            String[] parts = {"CPU", "RAM", "M.2 SSD", "CPU cooler"};
+            String[] attempts = {"Graphics card", "CPU", "RAM", "M.2 SSD", "CPU cooler"};
+            int installed = assembleComputer(parts, attempts);
+            System.out.println("Installed correctly: " + installed + " of " + parts.length);
+        }
+    }
+
+list_operations:
+  python: |
+    parts_tray = ["CPU", "RAM"]
+    print("Initial tray:", parts_tray)
+
+    parts_tray.append("M.2 SSD")
+    print("After append:", parts_tray)
+
+    parts_tray.insert(1, "CPU cooler")
+    print("After insert:", parts_tray)
+
+    parts_tray.pop(0)
+    print("After installing CPU:", parts_tray)
+    print("Parts remaining:", len(parts_tray))
+  java: |
+    import java.util.ArrayList;
+    import java.util.Arrays;
+
+    public class Main {
+        public static void main(String[] args) {
+            ArrayList<String> partsTray = new ArrayList<>(Arrays.asList("CPU", "RAM"));
+            System.out.println("Initial tray: " + partsTray);
+
+            partsTray.add("M.2 SSD");
+            System.out.println("After append: " + partsTray);
+
+            partsTray.add(1, "CPU cooler");
+            System.out.println("After insert: " + partsTray);
+
+            partsTray.remove(0);
+            System.out.println("After installing CPU: " + partsTray);
+            System.out.println("Parts remaining: " + partsTray.size());
+        }
+    }
+
+search:
+  python: |
+    def find_part(parts_tray, target_part):
+        for position, part in enumerate(parts_tray, start=1):
+            if part == target_part:
+                return position
+        return -1
+
+    parts_tray = ["CPU", "RAM", "M.2 SSD", "Graphics card"]
+    result = find_part(parts_tray, "Graphics card")
+    print("Graphics card position:", result)
+  java: |
+    public class Main {
+        static int findPart(String[] partsTray, String targetPart) {
+            for (int index = 0; index < partsTray.length; index++) {
+                if (partsTray[index].equals(targetPart)) {
+                    return index + 1;
+                }
+            }
+            return -1;
+        }
+
+        public static void main(String[] args) {
+            String[] partsTray = {"CPU", "RAM", "M.2 SSD", "Graphics card"};
+            int result = findPart(partsTray, "Graphics card");
+            System.out.println("Graphics card position: " + result);
+        }
+    }
+
+boolean:
+  python: |
+    selected_part = "CPU"
+    selected_slot = "CPU socket"
+    expected_part = "CPU"
+    expected_slot = "CPU socket"
+    parts_remaining = 7
+
+    correct_part = selected_part == expected_part
+    correct_slot = selected_slot == expected_slot
+
+    if correct_part and correct_slot:
+        print("The CPU snaps into place.")
+    else:
+        print("Return the part to the tray.")
+
+    if not parts_remaining == 0:
+        print("The PC build is still in progress.")
+  java: |
+    public class Main {
+        public static void main(String[] args) {
+            String selectedPart = "CPU";
+            String selectedSlot = "CPU socket";
+            String expectedPart = "CPU";
+            String expectedSlot = "CPU socket";
+            int partsRemaining = 7;
+
+            boolean correctPart = selectedPart.equals(expectedPart);
+            boolean correctSlot = selectedSlot.equals(expectedSlot);
+
+            if (correctPart && correctSlot) {
+                System.out.println("The CPU snaps into place.");
+            } else {
+                System.out.println("Return the part to the tray.");
+            }
+
+            if (!(partsRemaining == 0)) {
+                System.out.println("The PC build is still in progress.");
+            }
+        }
+    }
+
+prototype:
+  pseudocode: |
+    parts ← ["CPU", "RAM", "M.2 SSD", "CPU cooler", "Motherboard", "Power supply", "Graphics card", "Power cables"]
+    slots ← ["CPU socket", "RAM slots", "M.2 slot", "Cooler mount", "Board tray", "PSU bay", "PCIe slot", "Power headers"]
+    sampleParts ← ["Graphics card", "CPU", "RAM", "M.2 SSD", "CPU cooler", "Motherboard", "Power supply", "Graphics card", "Power cables"]
+    sampleSlots ← ["PCIe slot", "CPU socket", "RAM slots", "M.2 slot", "Cooler mount", "Board tray", "PSU bay", "PCIe slot", "Power headers"]
+    currentStep ← 1
+    attemptIndex ← 1
+    correctAttempts ← 0
+
+    REPEAT LENGTH(sampleParts) TIMES
+    {
+      selectedPart ← sampleParts[attemptIndex]
+      selectedSlot ← sampleSlots[attemptIndex]
+
+      IF (selectedPart = parts[currentStep] AND selectedSlot = slots[currentStep])
+      {
+        DISPLAY("Correct: " + selectedPart + " snapped into " + selectedSlot + ".")
+        correctAttempts ← correctAttempts + 1
+        currentStep ← currentStep + 1
+      }
+      ELSE
+      {
+        DISPLAY("Incorrect: " + selectedPart + " returned to the parts tray.")
+      }
+
+      attemptIndex ← attemptIndex + 1
+    }
+
+    DISPLAY("Build complete!")
+    DISPLAY("Accuracy: " + correctAttempts + " of " + LENGTH(sampleParts))
+  java: |
+    import java.util.ArrayList;
+
+    public class Main {
+        static boolean checkPlacement(String part, String slot, int step, String[] parts, String[] slots) {
+            return part.equalsIgnoreCase(parts[step]) && slot.equalsIgnoreCase(slots[step]);
+        }
+
+        public static void main(String[] args) {
+            String[] parts = {"CPU", "RAM", "M.2 SSD", "CPU cooler", "Motherboard", "Power supply", "Graphics card", "Power cables"};
+            String[] slots = {"CPU socket", "RAM slots", "M.2 slot", "Cooler mount", "Board tray", "PSU bay", "PCIe slot", "Power headers"};
+            String[][] sampleAttempts = {
+                {"Graphics card", "PCIe slot"}, {"CPU", "CPU socket"}, {"RAM", "RAM slots"},
+                {"M.2 SSD", "M.2 slot"}, {"CPU cooler", "Cooler mount"}, {"Motherboard", "Board tray"},
+                {"Power supply", "PSU bay"}, {"Graphics card", "PCIe slot"}, {"Power cables", "Power headers"}
+            };
+            ArrayList<Boolean> attempts = new ArrayList<>();
+            int currentStep = 0;
+
+            for (String[] attempt : sampleAttempts) {
+                String selectedPart = attempt[0];
+                String selectedSlot = attempt[1];
+                boolean correct = checkPlacement(selectedPart, selectedSlot, currentStep, parts, slots);
+                attempts.add(correct);
+
+                if (correct) {
+                    System.out.println("Correct: " + selectedPart + " snapped into " + selectedSlot + ".");
+                    currentStep++;
+                } else {
+                    System.out.println("Incorrect: " + selectedPart + " returned to the parts tray.");
+                }
+            }
+
+            int correctAttempts = 0;
+            for (boolean correct : attempts) {
+                if (correct) correctAttempts++;
+            }
+            System.out.println("Build complete!");
+            System.out.println("Accuracy: " + correctAttempts + " of " + attempts.size());
+        }
+    }
