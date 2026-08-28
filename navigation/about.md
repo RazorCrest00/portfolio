@@ -7,7 +7,7 @@ comments: true
 
 <header class="about-hero">
     <div class="about-hero__meta">
-        <span>Adhvay Iyer</span>
+        <span>Adhvay Ashiwn Iyer</span>
         <span aria-hidden="true">·</span>
         <span>10th Grade</span>
         <span aria-hidden="true">·</span>
