@@ -13,7 +13,6 @@ comments: true
         <span aria-hidden="true">·</span>
         <span>AP Computer Science Principles</span>
     </div>
-    <p class="about-hero__headline">I love solving problems with code—and spending time with my dog, Coco.</p>
     <p class="about-hero__intro">
         I am a San Diego student who is curious about computer science, mathematics, and cybersecurity.
         When I am away from a screen, you will probably find me with friends, on a soccer field, or playing badminton.
