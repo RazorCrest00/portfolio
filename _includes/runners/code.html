@@ -35,10 +35,10 @@
   {% endif %}
 
   {% capture code_runner_top_controls %}
-      <button type="button" class="runBtn" title="Run">▶</button>
-      <button type="button" class="copyBtn" title="Copy Code">⎘</button>
-      <button type="button" class="saveBtn" title="Save Code">💾</button>
-      <button type="button" class="clearStorageBtn" title="Clear Storage">🗑</button>
+      <button type="button" class="ocs__btn utility run" data-hook="run" title="Run" aria-label="Run"></button>
+      <button type="button" class="ocs__btn utility copy" data-hook="copy" title="Copy Code" aria-label="Copy Code"></button>
+      <button type="button" class="ocs__btn utility save" data-hook="save" title="Save Code" aria-label="Save Code"></button>
+      <button type="button" class="ocs__btn utility clear" data-hook="clear" title="Clear Storage" aria-label="Clear Storage"></button>
       <select class="languageSelect" aria-label="Runner language"{% if include.lock_language %} disabled title="This example is written in {{ include.language }}"{% endif %}>
         {% if has_code_variants %}
           {% if python_code %}<option value="python"{% if include.language == "python" %} selected{% endif %}>Python</option>{% endif %}
@@ -71,7 +71,7 @@
   <div class="output-container">
     <div class="control-panel">
       <span>Output</span>
-      <button type="button" class="copyOutputBtn" title="Copy Output">⎘</button>
+      <button type="button" class="ocs__btn utility copyOutput" data-hook="copy-output" title="Copy Output" aria-label="Copy Output"></button>
     </div>
     <div class="output-content">Click "Run" in code control panel to see output ...</div>
     <div class="control-panel">
@@ -84,9 +84,12 @@
 // AP CSP Pseudocode syntax highlighting mode for CodeMirror 5
 if (typeof CodeMirror !== 'undefined' && !CodeMirror.modes['pseudocode']) {
   CodeMirror.defineMode('pseudocode', function() {
-    const KW  = new Set(['IF','ELSE','REPEAT','TIMES','UNTIL','FOR','EACH','IN','PROCEDURE','RETURN','AND','OR','NOT','MOD']);
-    const BI  = new Set(['DISPLAY','INPUT','APPEND','INSERT','REMOVE','LENGTH']);
-    const BOOL= new Set(['TRUE','FALSE']);
+    const KW = new Set(['IF','ELSE','REPEAT','TIMES','UNTIL','FOR','EACH','IN','PROCEDURE','RETURN','AND','OR','NOT','MOD']);
+    const BI = new Set(['DISPLAY','INPUT','APPEND','INSERT','REMOVE','LENGTH']);
+    const BOOL = new Set(['TRUE','FALSE']);
+    const BI_EXTRA = new Set(['MOVE_FORWARD','ROTATE_LEFT','ROTATE_RIGHT','CAN_MOVE','RENDER']);
+    const ROBOT_BLUE = new Set(['FROM','TILEMAPS','IMPORT','SPAWN']);
+    const ROBOT_YELLOW = new Set(['CHARACTER','GOAL','AT']);
     return {
       token: function(stream) {
         if (stream.eatSpace()) return null;
@@ -107,12 +110,14 @@ if (typeof CodeMirror !== 'undefined' && !CodeMirror.modes['pseudocode']) {
         // Numbers
         if (stream.match(/^-?\d+(\.\d*)?/)) return 'number';
 
-        // Words: keywords / builtins / booleans / identifiers
+        // Words: robot commands take priority, then pseudocode keywords
         if (stream.match(/^[a-zA-Z_][a-zA-Z0-9_]*/)) {
           const w = stream.current().toUpperCase();
-          if (KW.has(w))   return 'keyword';
-          if (BI.has(w))   return 'builtin';
+          if (KW.has(w)) return 'keyword';
+          if (BI.has(w) || BI_EXTRA.has(w)) return 'builtin';
           if (BOOL.has(w)) return 'atom';
+          if (ROBOT_BLUE.has(w)) return 'attribute';
+          if (ROBOT_YELLOW.has(w)) return 'property';
           return 'variable';
         }
 
@@ -132,7 +137,7 @@ if (typeof CodeMirror !== 'undefined' && !CodeMirror.modes['pseudocode']) {
 </script>
 
 <script type="module">
-import { BaseRunner, CodeExecutor, PseudocodeExecutor, PyodideExecutor, LanguageVariantManager } from '{{site.baseurl}}/assets/js/pages/runners/index.js';
+import { BaseRunner, CodeExecutor, PseudocodeExecutor, PyodideExecutor, LanguageVariantManager, RobotExecutor } from '{{site.baseurl}}/assets/js/pages/runners/index.js';
 import { pythonURI, javaURI, fetchOptions } from '{{site.baseurl}}/assets/js/api/config.js';
 
 (function() {
@@ -141,6 +146,7 @@ import { pythonURI, javaURI, fetchOptions } from '{{site.baseurl}}/assets/js/api
   
   const initialLang = "{{ include.language }}";
   const useLocalPython = {{ include.local_python | default: false | jsonify }};
+  const autostart = "{{ include.autostart | default: 'false' }}" === "true";
   const defaultCode = JSON.parse(container.dataset.defaultCode || "\"\"");
   const editorHeight = "{{ include.height }}";
   const storageKey = container.dataset.storageKey;
@@ -183,6 +189,11 @@ import { pythonURI, javaURI, fetchOptions } from '{{site.baseurl}}/assets/js/api
     outputElement: outputDiv,
     execTimeElement: execTimeSpan,
   }) : null;
+
+  const robotExecutor = new RobotExecutor({
+    outputElement: outputDiv,
+    execTimeElement: execTimeSpan,
+  });
 
   const codeVariants = {};
   ["python", "java", "javascript", "pseudocode"].forEach((language) => {
@@ -259,12 +270,14 @@ import { pythonURI, javaURI, fetchOptions } from '{{site.baseurl}}/assets/js/api
     }
   });
 
-  codeExecutor.bindCopyOutput(container.querySelector('.copyOutputBtn'));
+  codeExecutor.bindCopyOutput(container.querySelector('[data-hook="copy-output"]'));
 
   // Run button logic
   function runCode() {
     if (langSelect.value === "pseudocode") {
-      return pseudoExecutor.run(editor.getValue());
+      const source = editor.getValue();
+      if (RobotExecutor.detect(source)) return robotExecutor.run(source);
+      return pseudoExecutor.run(source);
     }
     if (langSelect.value === "python" && localPythonExecutor) {
       return localPythonExecutor.run(editor.getValue());
@@ -272,9 +285,13 @@ import { pythonURI, javaURI, fetchOptions } from '{{site.baseurl}}/assets/js/api
     return codeExecutor.run();
   }
 
-  runner.bindButton('.runBtn', runCode);
+  runner.bindButton('', runCode, 'run');
 
   // Keyboard shortcut
   runner.bindShortcut(runCode);
+
+  if (autostart) {
+    setTimeout(runCode, 0);
+  }
 })();
 </script>

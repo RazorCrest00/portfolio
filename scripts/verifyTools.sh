@@ -1,25 +1,10 @@
-<<<<<<< HEAD
 #!/bin/bash
-=======
-#\!/bin/bash
->>>>>>> upstream/main
 
 ## Script provides functionality to verify all tool versions/installations and outputs to specified markdown file
 
 file_name="verifyTools.md"
 
 if [ -f "$file_name" ]; then
-<<<<<<< HEAD
-    rm $file_name
-fi
-
-## Create markdown file with specified $file_name
-touch $file_name
-
-## Header for markdown file so that code recognizes post as a blog
-echo "---
-layout: post 
-=======
     rm "$file_name"
 fi
 
@@ -30,7 +15,6 @@ touch "$file_name"
 cat <<'FRONT_MATTER' >> "$file_name"
 ---
 layout: post
->>>>>>> upstream/main
 title: Sprint 1 - Verify Tools
 description: Verifying Tools and Software for Sprint 1
 type: collab
@@ -38,15 +22,6 @@ courses: {'csa': {'week': 3}}
 comments: True
 categories: ['Collaboration']
 ---
-<<<<<<< HEAD
-" >> $file_name
-
-## Establish printCommand() functionality
-printCommand () {
-    echo "\`\`\`"
-    echo "Input: $1"
-    echo "Output: $($1)"
-=======
 
 FRONT_MATTER
 
@@ -60,7 +35,6 @@ printCommand () {
     echo "Input: $cmd"
     echo "Exit Code: $exit_code"
     echo "Output: $output"
->>>>>>> upstream/main
     echo "\`\`\`"
 }
 
@@ -75,27 +49,6 @@ verifyInstallations () {
     echo "----------------- Verifying Jupyter Kernels -----------------"
     printCommand "jupyter kernelspec list"
     echo "----------------- Verifying Java Version -----------------"
-<<<<<<< HEAD
-    printCommand "java --version"
-}
-
-## 
-createEnvVariables () {
-    echo "Verifying creation of project environment variables"
-
-
-    export project_dir=$HOME/nighthawk 
-    export project=\$project_dir/pages # <your project_dir>
-    export posts=\$project/_posts
-    export notebooks=\$project/_notebooks
-    export project_repo="https://github.com/open-coding-society/pages" # <your github directory>
-    
-    printCommand "echo \"Repos home dir: $project_dir\""
-    printCommand "echo \"Project dir: $project\""
-    printCommand "echo \"Posts dir: $posts\""
-    printCommand "echo \"Notebooks dir: $notebooks\""
-    printCommand "echo \"Repo: $project_repo\""
-=======
 }
 
 ## Verify opencs/pages repository and local environment setup
@@ -161,29 +114,17 @@ verifyOpencsPages () {
         echo "FAIL: venv not fully set up at $venv_dir"
         echo "Hint: run scripts/venv.sh from the pages repo root"
     fi
->>>>>>> upstream/main
 }
 
 ## Verify that your github configuration information is accurate
 verifyGithubInfo () {
-<<<<<<< HEAD
-    echo "Verifying configuration of GitHub "
-
-=======
 
     echo "----------------- Verifying GitHub configuration -----------------"
->>>>>>> upstream/main
     printCommand "git config --global --list"
 
 }
 
 ## Send all verifications to markdown file
-<<<<<<< HEAD
-verifyInstallations >> $file_name
-createEnvVariables >> $file_name
-verifyGithubInfo >> $file_name
-=======
 verifyInstallations >> "$file_name"
 verifyOpencsPages >> "$file_name"
 verifyGithubInfo >> "$file_name"
->>>>>>> upstream/main

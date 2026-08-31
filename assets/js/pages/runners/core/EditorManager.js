@@ -35,16 +35,10 @@ export class EditorManager {
       return null;
     }
 
-<<<<<<< HEAD
     const prefilledCode = textarea.value;
     this.setCodeMirrorHeight(editorHeight || '300px');
     this.editor = CodeMirror.fromTextArea(textarea, codeMirrorOptions);
     this.editor.setValue(initialCode || prefilledCode || fallbackCode || '');
-=======
-    this.setCodeMirrorHeight(editorHeight || '300px');
-    this.editor = CodeMirror.fromTextArea(textarea, codeMirrorOptions);
-    this.editor.setValue(initialCode || fallbackCode || '');
->>>>>>> upstream/main
 
     if (trackChanges && typeof this.onChange === 'function') {
       this.editor.on('change', () => {

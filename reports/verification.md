@@ -27,3 +27,15 @@
 - Pass: no template gallery filename or generic numbered image description remains in `navigation/about.md`.
 - Pass: JavaScript syntax and `git diff --check` remain clean.
 - Pass: the required one-time Impeccable detector returned an empty findings list.
+
+## 2026-08-31 — Merge repair verification
+
+- Pass: no tracked source file contains Git conflict markers.
+- Pass: comparison with `backup-my-old-main` (`a4f2f02`) found no deleted local files.
+- Pass: all personalized About assets and PC Assembly implementation files remain present.
+- Pass: `node scripts/test_pc_assembly_lesson.mjs` validated 12 editable three-language runners, pseudocode behavior, Java compilation, the JavaScript drag-and-drop prototype, language draft persistence, and browser-local Python execution.
+- Pass: `node --check` succeeded for the merged runner modules and custom desert level; `bash -n` succeeded for the merged setup/verification scripts; Python byte-compilation succeeded for the notebook converter.
+- Pass: `venv/bin/python3 scripts/convert_notebooks.py` regenerated all 19 expected notebook posts after the spawned-worker import repair.
+- Pass: `bundle exec jekyll build` completed after regeneration with no Sass or Liquid warnings.
+- Pass: built artifacts contain the personalized About hero and four photos, all 12 PC Assembly runner IDs, combined local/upstream runner modules, the upstream signup email flow, and compiled alert-button CSS.
+- Warning: `nbformat` reports missing cell IDs in some source notebooks and currently repairs them transparently.

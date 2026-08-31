@@ -55,24 +55,14 @@ search_exclude: true
       </p>
       <p>
         <label>
-<<<<<<< HEAD
-          Password:
-          <input type="password" name="signupPassword" id="signupPassword" required>
-=======
           Email:
           <input type="email" name="email" id="email" required>
->>>>>>> upstream/main
         </label>
       </p>
       <p>
         <label>
-<<<<<<< HEAD
-          <input type="checkbox" name="kasmNeeded" id="kasmNeeded">
-          Kasm Server Needed
-=======
           Password:
           <input type="password" name="signupPassword" id="signupPassword" required>
->>>>>>> upstream/main
         </label>
       </p>
       <p>
@@ -84,80 +74,6 @@ search_exclude: true
 </div>
 
 <script type="module">
-<<<<<<< HEAD
-  import { javaURI } from '{{ site.baseurl }}/assets/js/api/config.js';
-  import { pythonURI } from '{{ site.baseurl }}/assets/js/api/config.js';
-
-  // Sign up function to handle form submission
-  window.signup = function() {
-    const signupOptionsJava = {
-      URL: `${javaURI}/api/person/create`,
-      method: "POST",
-      cache: "no-cache",
-      headers: new Headers({
-        "Content-Type": "application/json"
-      }),
-      body: JSON.stringify({
-        uid: document.getElementById("signupUid").value,
-        sid: document.getElementById("sid").value,
-        email: document.getElementById("signupUid").value + "@gmail.com",
-        dob: "11-01-2024",  // Static date for now, you can modify this
-        name: document.getElementById("name").value,
-        password: document.getElementById("signupPassword").value,
-        kasmServerNeeded: document.getElementById("kasmNeeded").checked,
-      })
-    };
-
-    const signupOptionsPython = {
-      URL: `${pythonURI}/api/user`,
-      method: "POST",
-      cache: "no-cache",
-      headers: new Headers({
-        "Content-Type": "application/json"
-      }),
-      body: JSON.stringify({
-        uid: document.getElementById("signupUid").value,
-        sid: document.getElementById("sid").value,
-        email: document.getElementById("signupUid").value + "@gmail.com",
-        dob: "11-01-2024",  // Static date for now, you can modify this
-        name: document.getElementById("name").value,
-        password: document.getElementById("signupPassword").value,
-        kasmServerNeeded: document.getElementById("kasmNeeded").checked,
-      })
-    };
-
-    // Debugging: Check if the request is set up correctly
-    console.log('Sending request:', signupOptionsJava, signupOptionsPython);
-
-    // Send the request to the server
-    fetch(signupOptionsJava.URL, signupOptionsJava)
-      .then(response => response.json())
-      .then(data => {
-        if (data.success) {
-          document.getElementById("signupMessage").innerText = "Sign up successful!";
-        } else {
-          document.getElementById("signupMessage").innerText = "Sign up failed: " + data.message;
-        }
-      })
-      .catch(error => {
-        document.getElementById("signupMessage").innerText = "Error: " + error.message;
-        console.error('Error during signup:', error);
-      });
-
-    fetch(signupOptionsPython.URL, signupOptionsPython)
-      .then(response => response.json())
-      .then(data => {
-        if (data.success) {
-          document.getElementById("signupMessage").innerText = "Sign up successful!";
-        } else {
-          document.getElementById("signupMessage").innerText = "Sign up failed: " + data.message;
-        }
-      })
-      .catch(error => {
-        document.getElementById("signupMessage").innerText = "Error: " + error.message;
-        console.error('Error during signup:', error);
-      });
-=======
   import { javaURI, pythonURI, fetchOptions } from '{{ site.baseurl }}/assets/js/api/config.js';
 
   // Sign up function to handle form submission
@@ -227,6 +143,5 @@ search_exclude: true
       signupMessage.innerText = "Sign up failed: " + error.message;
       console.error("Error during signup:", error);
     }
->>>>>>> upstream/main
   };
 </script>

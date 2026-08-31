@@ -29,3 +29,13 @@
 - Tests run: third repository `make` workflow, built HTML gallery audit, image decode/dimension/luminance checks, metadata check, template-reference search, JavaScript syntax validation, whitespace validation, and the Impeccable detector.
 - Result: passed; all 4 images decode correctly, all 4 captions render, every image has alt text and dimensions, all 8 rubric items are checked, and the detector returned no findings.
 - Next verified task: inspect the final diff and three-commit history.
+
+## 2026-08-31 — Upstream merge repair
+
+- Task: Repair the already-committed unrelated-histories merge with `upstream/main` without losing portfolio work.
+- Portfolio work preserved: personalized About page and four photos, PC Assembly CPT lesson and language variants, browser-local Python execution, editable runner starters, analytics hooks, and local game content.
+- Framework integration: adopted upstream signup/setup/conversion/game-executor behavior; combined upstream runner hooks, robot execution, and autostart with the local multi-language and Pyodide features.
+- Merge repairs: removed all embedded conflict markers, disambiguated duplicate Sass partial names, fixed alert-button token interpolation, corrected the `verifyTools.sh` shebang, and made notebook conversion imports work in spawned macOS workers.
+- Tests run: JavaScript/Python/shell syntax checks, PC Assembly regression suite, all 19 notebook conversions, generated-output inspection, and a final Jekyll build.
+- Result: passed. The working tree contains only the staged merge-repair changes and is ready for a follow-up commit.
+- Known limitation: some source notebooks lack modern cell IDs; `nbformat` currently normalizes them with a warning.

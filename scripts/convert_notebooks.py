@@ -11,10 +11,14 @@ import concurrent.futures, traceback, re
 from dataclasses import dataclass, asdict
 from typing import Any, Optional
 
-if __name__ == "__main__":
-    from progress_bar import ProgressBar
-else:
+try:
     from scripts.progress_bar import ProgressBar
+except ModuleNotFoundError as error:
+    if error.name != "scripts":
+        raise
+    # Direct execution (`python scripts/convert_notebooks.py`) puts the scripts
+    # directory, not the repository root, on sys.path in spawned workers.
+    from progress_bar import ProgressBar
 
 
 ###########################################
@@ -54,15 +58,12 @@ Real pair example (Cookie Clicker):
 - <!-- UI_RUNNER: How to Play panel | panel: cookie_intro_game, slot: left, layout: row, ratio: 20-80, gap: 1rem -->
 - // GAME_RUNNER: Cookie Clicker Mini Game with large cookie | hide_edit: true, panel: cookie_intro_game, slot: right, layout: row, ratio: 20-80, gap: 1rem, width: 100%, height: 520px
 
-<<<<<<< HEAD
-=======
 Runner options:
 - autostart: true|false  Auto-runs the game when the runner initializes. Default: false.
 
 Game-runner specific options:
 - hide_edit, width, height, editor_height
 
->>>>>>> upstream/main
 Notes on CodeFence and MermaidGraph:
 - Plain markdown code fences and Mermaid markdown are not panel-aware by default.
 - To place those side-by-side, wrap desired content in a panel-aware runner cell
@@ -86,12 +87,9 @@ UI_RUNNER_PATTERN = r'^<!--\s*UI_RUNNER:\s*(.+)\s*-->$'
 # GAME_RUNNER pattern for GameEngine cells (JavaScript only)
 GAME_RUNNER_PATTERN = r'^//\s*GAME_RUNNER:\s*(.+)$'
 
-<<<<<<< HEAD
-=======
 # PSEUDOCODE_RUNNER pattern for Pseudocode examples (raw or code cells)
 PSEUDOCODE_RUNNER_PATTERN = r'^//\s*PSEUDOCODE_RUNNER:\s*(.+)$'
 
->>>>>>> upstream/main
 
 #########################################
 ### Section for Core Helper Functions ###
@@ -261,11 +259,7 @@ class CodeRunner:
 
     def liquid_lines(self, code_fence_lines: list[str], code_runner_count: int) -> list[str]:
         """Render Jekyll Liquid captures/includes for embedding the code runner widget."""
-<<<<<<< HEAD
-        return [
-=======
         lines = [
->>>>>>> upstream/main
             '',
             '{% capture challenge' + str(code_runner_count) + ' %}',
             self.challenge,
@@ -285,12 +279,6 @@ class CodeRunner:
             '   challenge=challenge' + str(code_runner_count),
             '   code=code' + str(code_runner_count),
             '   source=source' + str(code_runner_count),
-<<<<<<< HEAD
-            '%}',
-            '',
-        ]
-
-=======
         ]
 
         if self.options.get('autostart') or self.options.get('auto_start'):
@@ -299,7 +287,6 @@ class CodeRunner:
         lines.extend(['%}', ''])
         return lines
 
->>>>>>> upstream/main
 
 @dataclass
 class UiRunner:
@@ -570,11 +557,8 @@ class GameRunner:
 
         if self.options.get('hide_edit'):
             lines.append('   hide_edit="true"')
-<<<<<<< HEAD
-=======
         if self.options.get('autostart') or self.options.get('auto_start'):
             lines.append('   autostart="true"')
->>>>>>> upstream/main
         if self.options.get('width'):
             lines.append(f'   width="{self.options["width"]}"')
         if self.options.get('height'):
@@ -585,8 +569,6 @@ class GameRunner:
         lines.extend(['%}', ''])
         return lines
 
-<<<<<<< HEAD
-=======
 
 @dataclass
 class PseudocodeRunner:
@@ -721,7 +703,6 @@ class PseudocodeRunner:
         return lines
 
 
->>>>>>> upstream/main
 @dataclass
 class CodeFence:
     opening_fence: str
@@ -829,11 +810,7 @@ def fix_js_code_blocks(markdown):
 
 
 def classify_custom_cell_type(cell) -> Optional[str]:
-<<<<<<< HEAD
-    """Classify a notebook cell as code/ui/game custom type, or None."""
-=======
     """Classify a notebook cell as code/ui/game/pseudocode custom type, or None."""
->>>>>>> upstream/main
     if cell.cell_type == 'code':
         source = cell.get('source', '')
         if source.strip().startswith('%%js') and GameRunner.extract_challenge_and_options(source):
@@ -846,10 +823,6 @@ def classify_custom_cell_type(cell) -> Optional[str]:
         if source.strip().startswith('%%html') and UiRunner.extract_description(source):
             return 'ui_runner'
 
-<<<<<<< HEAD
-    if cell.cell_type == 'raw' and UiRunner.extract_description(cell.get('source', '')):
-        return 'ui_runner'
-=======
     if cell.cell_type == 'raw':
         source = cell.get('source', '')
         if UiRunner.extract_description(source):
@@ -859,7 +832,6 @@ def classify_custom_cell_type(cell) -> Optional[str]:
         source = cell.get('source', '')
         if PseudocodeRunner.extract_challenge_and_options(source):
             return 'pseudocode_runner'
->>>>>>> upstream/main
 
     return None
 
@@ -964,8 +936,6 @@ def process_game_runner_cells(notebook, permalink):
     return notebook
 
 
-<<<<<<< HEAD
-=======
 def process_pseudocode_runner_cells(notebook, permalink):
     """Process notebook cells and add pseudocode-runner metadata"""
     runner_index = 0
@@ -989,7 +959,6 @@ def process_pseudocode_runner_cells(notebook, permalink):
     return notebook
 
 
->>>>>>> upstream/main
 def inject_code_runners(markdown, notebook, front_matter=None):
     """Inject code-runner includes after code blocks with metadata
     
@@ -1005,8 +974,6 @@ def inject_code_runners(markdown, notebook, front_matter=None):
 
     ui_runner_cells, ui_runner_ids = UiRunner.collect_cells_and_source_ids(notebook)
     code_cells = [cell for cell in notebook.cells if cell.cell_type == 'code']
-<<<<<<< HEAD
-=======
     raw_cells = [cell for cell in notebook.cells if cell.cell_type == 'raw']
     
     # Create a mapping of cell order for proper injection
@@ -1020,7 +987,6 @@ def inject_code_runners(markdown, notebook, front_matter=None):
         elif cell.cell_type == 'raw':
             cell_order_map[i] = ('raw', raw_index)
             raw_index += 1
->>>>>>> upstream/main
     
     lines = markdown.split('\n')
     result = []
@@ -1034,10 +1000,7 @@ def inject_code_runners(markdown, notebook, front_matter=None):
     emitted_ui_cells: set[str] = set()
     in_ui_runner_output = False
     ui_runner_depth = 0
-<<<<<<< HEAD
-=======
     raw_cell_injected: set[int] = set()
->>>>>>> upstream/main
     
     i = 0
 
@@ -1150,11 +1113,6 @@ def inject_code_runners(markdown, notebook, front_matter=None):
             return queue_panel_runner(config, lines_to_queue)
         return lines_to_queue
 
-<<<<<<< HEAD
-    while i < len(lines):
-        line = lines[i]
-        
-=======
     # Collect pseudocode runners for injection
     pseudocode_runners = []
     for cell in notebook.cells:
@@ -1180,7 +1138,6 @@ def inject_code_runners(markdown, notebook, front_matter=None):
             i += 1
             continue
         
->>>>>>> upstream/main
         # Check if we're starting a UI_RUNNER output section
         if not in_ui_runner_output and ui_runner_count < len(ui_runner_cells):
             # Look for HTML that matches UI runner IDs
@@ -1299,10 +1256,7 @@ def process_custom_cells(notebook, permalink):
     notebook = process_code_runner_cells(notebook, permalink)
     notebook = process_ui_runner_cells(notebook, permalink)
     notebook = process_game_runner_cells(notebook, permalink)
-<<<<<<< HEAD
-=======
     notebook = process_pseudocode_runner_cells(notebook, permalink)
->>>>>>> upstream/main
     return notebook
 
 
