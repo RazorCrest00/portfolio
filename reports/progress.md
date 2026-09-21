@@ -45,4 +45,5 @@
 - Goal: publish all three Popcorn solutions, the final transmission homework, and evidence-based self-assessment in Adhvay's own portfolio.
 - Plan: (1) verify the current assignment and repository; (2) create and execute the notebook with useful additional checks; (3) build and inspect the page; (4) publish and verify the live submission links.
 - Completed implementation and local verification: one notebook, five independently executable cells, saved outputs, eight changed-input cases, a successful Jekyll build, and desktop/mobile inspection.
-- Delivery: the notebook and browser-runtime opt-in are ready for the existing main-branch GitHub Pages deployment workflow. The notebook contains its published-page and source download links; the workflow and live links are checked after pushing.
+- All four plan steps are **Done**. Commit `d188541` was published to `RazorCrest00/portfolio/main`; GitHub Actions run `35644755294` completed build and deployment successfully. The public page and notebook download both return HTTP 200, and all five runners also pass on the live site.
+- Submit the notebook `_notebooks/homework/2026-09-21-strings-intercepters-hw.ipynb` for 3.04 Strings. Public page: https://razorcrest00.github.io/portfolio/python/strings-intercepters-hw .

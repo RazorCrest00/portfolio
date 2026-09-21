@@ -50,3 +50,5 @@
 - Pass: Chrome executes all five browser-local Python runners and reproduces saved outputs without requests to the remote execution API. Desktop and 390px mobile rendering have no page overflow or uncaught JavaScript exceptions.
 - Pass: existing PC Assembly regression suite remains green; pages without local_python retain remote execution, and existing include-level local_python opt-ins still render enabled.
 - Existing unrelated resource warnings: optional site analytics/completion scripts are absent, the local SDK server is unavailable, and a CDN selection stylesheet fails to load. These do not prevent the verified homework runners from executing.
+- Pass after publication: [GitHub Actions run 35644755294](https://github.com/RazorCrest00/portfolio/actions/runs/35644755294) completed successfully; public page and raw notebook return HTTP 200. Downloaded notebook bytes match the verified source.
+- Pass on the public site: all five runners reproduce their notebook outputs using browser-local Python; desktop/mobile checks and the no-remote-execution assertion pass. Notebook outputs are saved in the downloadable file; the webpage presents fresh results after Run.
