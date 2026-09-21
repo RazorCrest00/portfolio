@@ -15,3 +15,12 @@
 - Combine runner implementations instead of choosing one side: upstream supplies `data-hook` controls, robot execution, autostart, and improved game module resolution; local supplies language variants, Pyodide, case-insensitive pseudocode, and prefilled editable starters.
 - Keep the existing merge commit intact and prepare a staged follow-up repair because the merge had already been committed and pushed before conflict markers were removed.
 - Resolve the old/new Sass filename collision with explicit upstream partial imports, retaining the local legacy files for compatibility.
+
+## 2026-09-21 — 3.04 Strings homework
+
+- Follow the current Strings assignment's notebook format, retaining CODE_RUNNER markers and avoiding imports and input().
+- Keep each required answer separate and independently executable; place additional test cases in a fifth cell.
+- Use literal outer JSON braces around f-string fields to avoid conflicting with the site's Liquid template syntax.
+- Justify rubric coverage using executable evidence and actual outputs; disclose AI assistance and do not claim independent authorship, peer feedback, or a guaranteed grade.
+- Preserve the existing site theme, layout, configuration, and unrelated portfolio work.
+- Enable the existing Pyodide executor through a page-level opt-in. The remote OCS runner does not return an allowed-origin header for this GitHub Pages domain, so the homework executes Python locally in the browser. Existing include-level opt-ins keep working.

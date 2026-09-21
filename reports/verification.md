@@ -39,3 +39,14 @@
 - Pass: `bundle exec jekyll build` completed after regeneration with no Sass or Liquid warnings.
 - Pass: built artifacts contain the personalized About hero and four photos, all 12 PC Assembly runner IDs, combined local/upstream runner modules, the upstream signup email flow, and compiled alert-button CSS.
 - Warning: `nbformat` reports missing cell IDs in some source notebooks and currently repairs them transparently.
+
+## 2026-09-21 — 3.04 Strings homework
+
+- Pass: all five notebook cells execute independently; saved outputs exactly match re-execution. No submitted code cell imports modules, calls input(), or contains unfinished TODOs.
+- Pass: required Popcorn and homework results match explicit expected values, including 31 characters, five cleaned words, all decoded fields, the Markdown row, and valid JSON with integer confidence and Boolean contains_dawn.
+- Pass: eight changed-input cases also pass when applied to the actual required homework cell; JSON output was independently parsed by the verification harness.
+- Pass: the included 56-check test cell detects deliberately introduced case-sensitivity, slicing, and word-boundary regressions.
+- Pass: registered projects, notebook conversion, Jekyll build, and git diff whitespace checks.
+- Pass: Chrome executes all five browser-local Python runners and reproduces saved outputs without requests to the remote execution API. Desktop and 390px mobile rendering have no page overflow or uncaught JavaScript exceptions.
+- Pass: existing PC Assembly regression suite remains green; pages without local_python retain remote execution, and existing include-level local_python opt-ins still render enabled.
+- Existing unrelated resource warnings: optional site analytics/completion scripts are absent, the local SDK server is unavailable, and a CDN selection stylesheet fails to load. These do not prevent the verified homework runners from executing.

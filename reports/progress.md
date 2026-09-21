@@ -39,3 +39,10 @@
 - Tests run: JavaScript/Python/shell syntax checks, PC Assembly regression suite, all 19 notebook conversions, generated-output inspection, and a final Jekyll build.
 - Result: passed. The working tree contains only the staged merge-repair changes and is ready for a follow-up commit.
 - Known limitation: some source notebooks lack modern cell IDs; `nbformat` currently normalizes them with a warning.
+
+## 2026-09-21 — 3.04 Strings homework
+
+- Goal: publish all three Popcorn solutions, the final transmission homework, and evidence-based self-assessment in Adhvay's own portfolio.
+- Plan: (1) verify the current assignment and repository; (2) create and execute the notebook with useful additional checks; (3) build and inspect the page; (4) publish and verify the live submission links.
+- Completed implementation and local verification: one notebook, five independently executable cells, saved outputs, eight changed-input cases, a successful Jekyll build, and desktop/mobile inspection.
+- Delivery: the notebook and browser-runtime opt-in are ready for the existing main-branch GitHub Pages deployment workflow. The notebook contains its published-page and source download links; the workflow and live links are checked after pushing.

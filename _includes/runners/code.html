@@ -145,7 +145,7 @@ import { pythonURI, javaURI, fetchOptions } from '{{site.baseurl}}/assets/js/api
   if (!container) return;
   
   const initialLang = "{{ include.language }}";
-  const useLocalPython = {{ include.local_python | default: false | jsonify }};
+  const useLocalPython = {{ include.local_python | default: page.local_python | default: false | jsonify }};
   const autostart = "{{ include.autostart | default: 'false' }}" === "true";
   const defaultCode = JSON.parse(container.dataset.defaultCode || "\"\"");
   const editorHeight = "{{ include.height }}";
