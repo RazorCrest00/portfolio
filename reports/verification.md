@@ -9,6 +9,7 @@
 - Pass: Makefile single-notebook conversion and Jekyll build; no new dependencies or style changes.
 - Pass: all four local browser runners reproduce saved output using Pyodide, with no remote Python execution requests and no uncaught page errors. Empty/changed inputs, reset, invalid-step error recovery, and mobile execution also pass.
 - Pass: rendered desktop and mobile screenshots reviewed; no page overflow at 1440, 768, or 390 pixels. Tests cache the unchanged shared Mermaid CDN library to avoid its slow browser download; Python executes through the actual Pyodide runtime.
+- Pass after publication: [GitHub Actions run 36178305305](https://github.com/RazorCrest00/portfolio/actions/runs/36178305305) completed build and deployment. The public page returns HTTP 200, and the raw notebook is byte-identical to the verified source (SHA-256 `c36b1820353bc2b41d3b040197bd4d80cc971962f1444ce1f191c61c8de9ff57`). All four public runners reproduce saved outputs; empty/changed inputs, reset, error recovery, mobile execution, and the no-remote-Python-request check pass.
 
 ## 2026-08-25 — Section 1
 
