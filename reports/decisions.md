@@ -1,5 +1,13 @@
 # About Page Personalization Decisions
 
+## 2026-09-25 — 3.08 Iterations homework
+
+- Follow the live Python 3.08 notebook submission format and reuse the existing portfolio OCS/Pyodide runner; no shared runner, CSS, Sass, or dependency changes.
+- Keep the required solutions as direct, independently executable loops with original simulated datasets. Use SFSRC for Popcorn and UESL match latency for the personal homework theme.
+- Include the critical reading in action counts/totals before stopping; label the unread suffix as uninspected. Test exact threshold equality and initial critical values.
+- Add while/fixed-count examples, an AP translation, traces, and a reproducible verifier that executes the submitted cells instead of a duplicate solution.
+- Show the user's requested 1.00/1.00 as a self-assessment with criterion-level evidence. The live MCQ was completed with A,B,A,B and returned 4/4. Credit AI assistance and existing OCS/Pyodide infrastructure.
+
 ## 2026-08-25
 
 - Preserve the site's incumbent dark Minima theme while giving the About page a distinct warm-gold accent.

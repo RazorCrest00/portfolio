@@ -1,5 +1,13 @@
 # About Page Personalization Progress
 
+## 2026-09-25 — 3.08 Iterations homework
+
+- Goal: complete and publish the Python Iterations Popcorn, MCQ, and homework tasks with original data, explanations, browser execution, and evidence supporting a 1.00/1.00 self-assessment.
+- Plan: (1) inspect the live assignment and existing portfolio conventions; (2) implement the notebook and reproducible tests; (3) execute, build, and inspect desktop/mobile runners; (4) publish and verify the public page and download.
+- Step 1: **Done**. The current lesson requires a notebook, one CODE_RUNNER task per cell, original values, a four-question MCQ result, and a checker using at least eight values, two thresholds, continue, break, and labeled counters/totals.
+- Steps 2–3: **Done**. Created the executed notebook and a standard-library verification script. Four independent browser runners, all required exercises, traces, AP translation, design notes, and full-score rubric evidence are complete. Eleven homework datasets, ten extension cases, four mutation checks, and four AP examples pass. The live lesson's MCQ returned 4/4. Local conversion, Jekyll build, and desktop/mobile review pass.
+- Step 4: in progress; publish and verify the page and notebook download. Full marks are a requested self-assessment, not an independently awarded grade. All monitoring inputs are labeled classroom simulations.
+
 ## 2026-08-25 — Section 1: JavaScript flag grid
 
 - Task: Replace the template flag content with Adhvay Iyer's three meaningful locations.

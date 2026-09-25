@@ -1,5 +1,15 @@
 # About Page Verification
 
+## 2026-09-25 — 3.08 Iterations homework
+
+- Pass: notebook-format validation; four independently executed code cells have saved outputs matching re-execution.
+- Pass: `python3 scripts/test_iterations_homework.py` checks eleven actual-homework datasets, Popcorn counters/totals, ten extension cases, unchanged input lists, printed reports, and four deliberately introduced regressions. It detects wrong safe/critical boundaries, a missing checked-count update, and failure to stop early.
+- Pass: AP translation in the existing portfolio interpreter matches the six report values for the main, empty, changed-boundary, and critical-first inputs.
+- Pass: the live lesson's client-side MCQ returned `MCQ 3.08 Iterations: 4/4 | answers: A,B,A,B`. No assignment form was submitted.
+- Pass: Makefile single-notebook conversion and Jekyll build; no new dependencies or style changes.
+- Pass: all four local browser runners reproduce saved output using Pyodide, with no remote Python execution requests and no uncaught page errors. Empty/changed inputs, reset, invalid-step error recovery, and mobile execution also pass.
+- Pass: rendered desktop and mobile screenshots reviewed; no page overflow at 1440, 768, or 390 pixels. Tests cache the unchanged shared Mermaid CDN library to avoid its slow browser download; Python executes through the actual Pyodide runtime.
+
 ## 2026-08-25 — Section 1
 
 - Pass: `make` completed all 19 notebook conversions, course splitting, project documentation builds, and local Jekyll startup.
