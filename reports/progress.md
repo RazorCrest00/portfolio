@@ -7,7 +7,7 @@
 - Step 1: **Done**. The live lesson now uses emergency-report procedures, replacing the old local café/reward version. Follow `report_status`, `is_priority`/`process_report`, and `check_priority`/`dispatch_response`, with at least three homework calls.
 - Step 2: **Done**. Created `_notebooks/homework/2026-09-28-calling-procedures-hw.ipynb` and `scripts/test_calling_procedures_homework.py`. Three executed cells cover both Popcorn tasks and four dispatch calls, with traces, AP notation, five explained knowledge answers, and a six-row self-assessment.
 - Step 3: **Done**. Notebook validation, Python behavioral/regression checks, AP execution, notebook conversion, Jekyll build, and local browser checks pass. All runners reproduce saved output; changed inputs, reset, and mobile execution work.
-- Step 4: in progress. Publish the verified notebook and check the public page and download. Reports use fictional practice locations. Scores remain a self-assessment and a self-checked written knowledge result.
+- Step 4: **Done**. Published at `https://razorcrest00.github.io/portfolio/csp/python/calling-procedures/hw` through successful build/deploy run `36468931251`. All three public runners, changed inputs, keyword binding, reset, mobile execution, and the byte-identical notebook download pass. All four planned steps are complete; no assignment form was submitted.
 
 ## 2026-09-25 — 3.08 Iterations homework
 
