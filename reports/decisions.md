@@ -1,5 +1,12 @@
 # About Page Personalization Decisions
 
+## 2026-09-28 — 3.12 Calling Procedures homework
+
+- Follow the current live emergency-report assignment, rather than the outdated local café version. Preserve the specified procedure names and exact Medical Emergency comparison.
+- Keep three independent code cells: both Popcorn exercises and the dispatch homework. Four homework calls use four fictional practice locations and three incident types. Add explanations and verification without complicating the functions.
+- Reuse existing OCS/Pyodide browser execution with `local_python: true`; restrict this page's selectors to Python because all editable examples are Python. No CSS, Sass, shared runner, or dependency changes.
+- Base the 1.00/1.00 self-assessment on the current six-row rubric. The five written knowledge answers are B,B,B,B,A, self-checked rather than recorded as a live quiz grade. Credit AI assistance and the existing runtime.
+
 ## 2026-09-25 — 3.08 Iterations homework
 
 - Follow the live Python 3.08 notebook submission format and reuse the existing portfolio OCS/Pyodide runner; no shared runner, CSS, Sass, or dependency changes.

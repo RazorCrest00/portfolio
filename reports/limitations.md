@@ -1,5 +1,11 @@
 # Known Limitations
 
+## 2026-09-28 — 3.12 Calling Procedures homework
+
+- The 1.00/1.00 score is an evidence-backed self-assessment, not an awarded grade. The written knowledge check is 5/5 self-checked; no live quiz result or teacher feedback is claimed.
+- Fictional reports and the exact-match priority rule implement a classroom simulation. Case and whitespace variants intentionally fail the exact comparison; this is not a real emergency-response classifier.
+- Browser Python requires an initial runtime download. The notebook includes saved outputs for review without rerunning. The shared OCS editor/runtime is reused and credited.
+
 ## 2026-09-25 — 3.08 Iterations homework
 
 - Scores in the notebook are a full-credit self-assessment supported by completed work, not an awarded course grade. The MCQ result was checked against the live lesson.

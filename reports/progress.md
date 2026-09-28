@@ -1,5 +1,14 @@
 # About Page Personalization Progress
 
+## 2026-09-28 — 3.12 Calling Procedures homework
+
+- Goal: publish both current Popcorn tasks, the dispatch homework, knowledge-check answers, and evidence supporting a 1.00/1.00 self-assessment.
+- Plan: (1) verify the live assignment; (2) implement the notebook and tests; (3) build and test browser execution/layout; (4) publish and verify the public submission links.
+- Step 1: **Done**. The live lesson now uses emergency-report procedures, replacing the old local café/reward version. Follow `report_status`, `is_priority`/`process_report`, and `check_priority`/`dispatch_response`, with at least three homework calls.
+- Step 2: **Done**. Created `_notebooks/homework/2026-09-28-calling-procedures-hw.ipynb` and `scripts/test_calling_procedures_homework.py`. Three executed cells cover both Popcorn tasks and four dispatch calls, with traces, AP notation, five explained knowledge answers, and a six-row self-assessment.
+- Step 3: **Done**. Notebook validation, Python behavioral/regression checks, AP execution, notebook conversion, Jekyll build, and local browser checks pass. All runners reproduce saved output; changed inputs, reset, and mobile execution work.
+- Step 4: in progress. Publish the verified notebook and check the public page and download. Reports use fictional practice locations. Scores remain a self-assessment and a self-checked written knowledge result.
+
 ## 2026-09-25 — 3.08 Iterations homework
 
 - Goal: complete and publish the Python Iterations Popcorn, MCQ, and homework tasks with original data, explanations, browser execution, and evidence supporting a 1.00/1.00 self-assessment.

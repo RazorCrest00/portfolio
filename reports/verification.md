@@ -1,5 +1,15 @@
 # About Page Verification
 
+## 2026-09-28 — 3.12 Calling Procedures homework
+
+- Pass: current live lesson checked against all six rubric rows, both Popcorn tasks, dispatch requirements, and five written knowledge questions. No assignment form submitted.
+- Pass: notebook schema validation and independent execution of all three code cells; saved stdout matches re-execution.
+- Pass: `python3 scripts/test_calling_procedures_homework.py` checks 16 helper cases, 20 actual nested outer/helper calls, four status cases, argument binding, silent definitions/helpers, real Boolean returns, and all three saved outputs. Four intentional defects are detected: string Boolean, bypassed helper, wrong helper argument, and reversed branch.
+- Pass: AP helper sketch executes in the existing portfolio interpreter and returns `true`, then `false`.
+- Pass: Makefile single-notebook conversion and Jekyll build. No shared runtime, stylesheet, or dependency modifications.
+- Pass: all three local browser runners reproduce saved output through actual Pyodide. Changed incident arguments, a reordered keyword call, reset, and mobile execution pass; no uncaught page errors or remote Python execution requests.
+- Pass: rendered desktop/mobile screenshots reviewed and no page overflow at 1440, 768, or 390 pixels. Browser checks isolate unrelated authentication endpoints and cache the unchanged Mermaid CDN library; they do not mock the Python runtime.
+
 ## 2026-09-25 — 3.08 Iterations homework
 
 - Pass: notebook-format validation; four independently executed code cells have saved outputs matching re-execution.
