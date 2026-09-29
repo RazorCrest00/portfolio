@@ -1,5 +1,12 @@
 # Known Limitations
 
+## 2026-09-29 — Remaining Python homework
+
+- Full-score figures are evidence-backed self-assessments, not awarded grades. 3.09 covers 1.00/1.00 of submitted work but leaves the separate 0.10 participation point unclaimed without classroom evidence. 3.13 publishes exercises without numeric weights; its page records complete coverage instead of inventing a rubric.
+- Assignments were checked on September 29, 2026; teachers may revise them. Each page links its source and supplies submission notes. No teacher submission forms were sent automatically.
+- Browser execution requires the initial Pyodide download. Libraries also downloads pinned Flask packages; the local preparation displays an error if unavailable. Saved notebook outputs and plain Python downloads remain available. Flask is exercised with its real test client, not a deployed backend; the hypothetical requirements file's pandas dependency is not used by the submitted runners.
+- Random QA, racing records, team performance, scam scores, and student access states are classroom simulations. Fixed seeds and the September 29 report date make results reproducible. Efficiency counts are analytical models, not timing benchmarks. No peer feedback or classroom participation is inferred from automated tests.
+
 ## 2026-09-28 — 3.12 Calling Procedures homework
 
 - The 1.00/1.00 score is an evidence-backed self-assessment, not an awarded grade. The written knowledge check is 5/5 self-checked; no live quiz result or teacher feedback is claimed.

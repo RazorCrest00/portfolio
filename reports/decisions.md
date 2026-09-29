@@ -1,5 +1,14 @@
 # About Page Personalization Decisions
 
+## 2026-09-29 — Remaining Python homework
+
+- Follow all eight live assignments as checked September 29. The active 3.09 version is Safe Passage Heals; 3.14 uses season statistics and Flask, not the older cached study-session exercise. Store exact assignment URLs and fetched HTML hashes in `python-homework-2026-09-29.json`.
+- Use seven notebook pages with saved outputs and one Markdown page for the explicitly requested 3.17 format. Keep code cells independently runnable, add plain Python downloads and one submission checklist, and preserve the existing theme and shared runner.
+- Use real Flask and its test client for the required Libraries route exercise. A page-local loader prepares Flask 3.1.3 and pinned pure-Python dependencies in the existing Pyodide 0.23.4 runtime before enabling Run. No repository dependency or lockfile changes. Flask was checked through its official PyPI metadata (Python >=3.9; maintained BSD-3-Clause package); its six dependency packages use compatible permissive licenses. MarkupSafe comes from the existing Pyodide package set. Local validation dependencies stay in a temporary directory.
+- Keep JavaScript, AP pseudocode, and Java translations as static examples beside Python-only runners. Standard `pre`/`code` markup prevents the existing converter from treating those translations as Python runner slots; do not change the shared converter. Compile the actual Java translation, since the assignment's block labeled Java uses JavaScript syntax.
+- Name the Random Values download `random-values.py`; `random.py` shadows the standard library when launched as a file. Test all eight downloads in fresh Python processes as well as executing their definitions.
+- Credit existing OCS/Pyodide infrastructure and AI assistance. Explain full-credit rubric evidence without instructions to manipulate grading. Leave 3.09's classroom participation bonus unclaimed without actual evidence; 3.13 has no published numeric rubric. Seed random demonstrations and fix the Libraries report date so saved outputs remain reproducible.
+
 ## 2026-09-28 — 3.12 Calling Procedures homework
 
 - Follow the current live emergency-report assignment, rather than the outdated local café version. Preserve the specified procedure names and exact Medical Emergency comparison.

@@ -1,0 +1,171 @@
+[
+  {
+    "key": "305",
+    "title": "3.05 Boolean Expressions",
+    "file": "_notebooks/homework/2026-09-29-boolean-hw.ipynb",
+    "permalink": "/python/boolean-hw",
+    "export": "assets/homework/2026-09-29/boolean.py",
+    "source": {
+      "lesson": "305",
+      "url": "https://pages.opencodingsociety.com/python/boolean/2027",
+      "bytes": 161458,
+      "text_chars": 17804,
+      "sha256": "3fecf79547b7b211317e69271feae983b1713179834a918d7c5f67ac784605b0"
+    },
+    "code_cells": [
+      "popcorn-1",
+      "popcorn-2",
+      "popcorn-3",
+      "homework",
+      "tests"
+    ],
+    "format": "notebook"
+  },
+  {
+    "key": "306",
+    "title": "3.06 Conditionals",
+    "file": "_notebooks/homework/2026-09-29-conditionals-hw.ipynb",
+    "permalink": "/python/conditionals-hw",
+    "export": "assets/homework/2026-09-29/conditionals.py",
+    "source": {
+      "lesson": "306",
+      "url": "https://pages.opencodingsociety.com/python/conditionals/py",
+      "bytes": 196691,
+      "text_chars": 31798,
+      "sha256": "fde87f80fd3bbb359e797ba4dd6ee9de15fe317aefe30441ac7329b246ced853"
+    },
+    "code_cells": [
+      "popcorn-1",
+      "popcorn-2",
+      "homework",
+      "tests"
+    ],
+    "format": "notebook"
+  },
+  {
+    "key": "307",
+    "title": "3.07 Nested Conditionals",
+    "file": "_notebooks/homework/2026-09-29-nested-conditionals-hw.ipynb",
+    "permalink": "/python/nested-conditionals-hw",
+    "export": "assets/homework/2026-09-29/nested-conditionals.py",
+    "source": {
+      "lesson": "307",
+      "url": "https://pages.opencodingsociety.com/python/nested-conditionals/student-life",
+      "bytes": 114018,
+      "text_chars": 10906,
+      "sha256": "930da44b99f4d0cb8d324f8c9dfdbfe9c0267ff82f1c6e3a4213415ec77c19ab"
+    },
+    "code_cells": [
+      "popcorn-1",
+      "popcorn-2",
+      "popcorn-3",
+      "homework",
+      "tests"
+    ],
+    "format": "notebook"
+  },
+  {
+    "key": "309",
+    "title": "3.09 Developing Algorithms",
+    "file": "_notebooks/homework/2026-09-29-developing-algorithms-hw.ipynb",
+    "permalink": "/python/developing-algorithms-hw",
+    "export": "assets/homework/2026-09-29/developing-algorithms.py",
+    "source": {
+      "lesson": "309",
+      "url": "https://pages.opencodingsociety.com/csp/python/developing-algorithms/lesson",
+      "bytes": 175048,
+      "text_chars": 23178,
+      "sha256": "d0cdb71f8d3a5715c66c6a336944629cff8b889f9555a4fa046c1c067f2f0f37"
+    },
+    "code_cells": [
+      "popcorn-1",
+      "popcorn-2",
+      "popcorn-3",
+      "homework",
+      "tests"
+    ],
+    "format": "notebook"
+  },
+  {
+    "key": "313",
+    "title": "3.13 Developing Procedures",
+    "file": "_notebooks/homework/2026-09-29-developing-procedures-hw.ipynb",
+    "permalink": "/python/developing-procedures-hw",
+    "export": "assets/homework/2026-09-29/developing-procedures.py",
+    "source": {
+      "lesson": "313",
+      "url": "https://pages.opencodingsociety.com/python/developing-procedures/2026",
+      "bytes": 57335,
+      "text_chars": 5853,
+      "sha256": "ca46e9c6b6043281b01a14e61e829d3dfc4b9884dc66055b62bba9520a30ea0b"
+    },
+    "code_cells": [
+      "exercise-1",
+      "homework",
+      "game"
+    ],
+    "format": "notebook"
+  },
+  {
+    "key": "314",
+    "title": "3.14 Libraries",
+    "file": "_notebooks/homework/2026-09-29-libraries-hw.ipynb",
+    "permalink": "/python/libraries-hw",
+    "export": "assets/homework/2026-09-29/libraries.py",
+    "source": {
+      "lesson": "314",
+      "url": "https://pages.opencodingsociety.com/python/libraries/2027",
+      "bytes": 149830,
+      "text_chars": 21785,
+      "sha256": "6b34b05e8eb89b99a6e1212b7e728559495b9d0fdf5e43deef1b6bd212fe1e80"
+    },
+    "code_cells": [
+      "popcorn-1",
+      "popcorn-2",
+      "homework",
+      "tests"
+    ],
+    "format": "notebook"
+  },
+  {
+    "key": "315",
+    "title": "3.15 Random Values",
+    "file": "_notebooks/homework/2026-09-29-random-hw.ipynb",
+    "permalink": "/python/random-hw",
+    "export": "assets/homework/2026-09-29/random-values.py",
+    "source": {
+      "lesson": "315",
+      "url": "https://pages.opencodingsociety.com/python/random/2027",
+      "bytes": 147272,
+      "text_chars": 16798,
+      "sha256": "0073a2f9893edd62ddb4363e8d2591323d67170730a187d0b021f8266707581b"
+    },
+    "code_cells": [
+      "popcorn-1",
+      "popcorn-2",
+      "popcorn-3",
+      "homework",
+      "tests"
+    ],
+    "format": "notebook"
+  },
+  {
+    "key": "317",
+    "title": "3.17 Algorithmic Efficiency",
+    "file": "navigation/homework/3-17.md",
+    "permalink": "/homework/3-17/",
+    "export": "assets/homework/2026-09-29/algorithmic-efficiency.py",
+    "source": {
+      "lesson": "317",
+      "url": "https://pages.opencodingsociety.com/python/algorithmic-efficiency/",
+      "bytes": 98703,
+      "text_chars": 12621,
+      "sha256": "6d9b8f2f9551ea08a90d43a041274f2b4a6c37a301d79d52a07aa8bfdddc9eb4"
+    },
+    "code_cells": [
+      "popcorn",
+      "homework"
+    ],
+    "format": "markdown"
+  }
+]

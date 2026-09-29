@@ -1,5 +1,15 @@
 # About Page Verification
 
+## 2026-09-29 — Remaining Python homework
+
+- Pass: all eight current assignments mapped to their required exercises, explanations, tests, and published rubric rows. Live client-side quizzes returned 4/4 for 3.05 (A,C,A,B), 3.09 (C,B,C,B), and 3.15 (C,B,B,B). The 3.17 written key is a 4/4 self-check (A,B,B,C). No assignment form submitted.
+- Pass: seven notebooks validate with `nbformat`; all 31 saved outputs exactly match independent re-execution. Makefile conversion and Jekyll build succeed.
+- Pass: `PYTHONPATH=/tmp/python-homework-python-deps python3 scripts/test_remaining_python_homework.py` checks the actual submitted source, all eight standalone homework files, Boolean missing/duplicate fields, eight scoring combinations and threshold boundaries, all 16 nested inputs, six restock datasets and length validation, recipe scaling/validation, season aggregation and empty input, real Flask responses/404, nine random action cases and 200 seeded trials, and exact efficiency model counts. Eight deliberately broken implementations are detected, one per topic. Static Markdown fence checks prevent translation/runner displacement.
+- Pass: JavaScript and AP lunch translations produce all four Python messages. `DessertProcedures.java` compiles and runs with a temporary official Adoptium JDK 21, matching Python for both argument sets; downloaded JDK checksum verified. No system Java configuration changed.
+- Pass: all 33 local browser runners execute actual Pyodide, including real Flask initialization and routes. Default code, collapsed source association, saved output, an editor change, reset, and mobile execution match expectations. All eight checklist links resolve to the intended portfolio paths. No uncaught page errors or remote `/run/python` requests.
+- Pass: desktop/mobile screenshots inspected; no horizontal page overflow at 1440, 768, or 390 pixels. Static translations now leave the later runners under their correct headings. Browser tests isolate unrelated authentication endpoints and cache the unchanged Mermaid script; Python and Flask are not mocked.
+- Fixed during verification: static translation fences incorrectly consumed later runner slots in the existing converter; content-only markup repair plus regression assertions resolves it. Renaming the Random Values download avoids a demonstrated standard-library import collision; independent file launches now pass for all eight homework exports.
+
 ## 2026-09-28 — 3.12 Calling Procedures homework
 
 - Pass: current live lesson checked against all six rubric rows, both Popcorn tasks, dispatch requirements, and five written knowledge questions. No assignment form submitted.

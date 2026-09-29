@@ -1,5 +1,13 @@
 # About Page Personalization Progress
 
+## 2026-09-29 — Remaining eight Python homework topics
+
+- Goal: complete and publish 3.05, 3.06, 3.07, 3.09, 3.13, 3.14, 3.15, and 3.17, with current assignment coverage, runnable examples, explanations, and full-score self-assessments supported by evidence.
+- Step 1: **Done** — inspected all eight live assignments and the alternate 3.09 page. Use the current Safe Passage Heals 3.09 assignment; its 0.10 classroom participation bonus needs real participation evidence. 3.13 lists three exercises but no point rubric. Client-side MCQs for 3.05, 3.09, and 3.15 returned 4/4.
+- Step 2: **Done** — seven executed homework notebooks, the specifically required `navigation/homework/3-17.md` page, a submission checklist, 14 supporting downloads, and a behavioral verifier. Existing OCS/Pyodide formatting and runtime are reused; no shared CSS, runner, or converter changes. Libraries uses real Flask routes.
+- Step 3: **Done** — all 31 saved notebook outputs, eight independently launched homework downloads, eight intentional regression checks, Java/JavaScript/AP translations, notebook conversion, and site build pass. All 33 local browser runners pass output, source placement, editing, reset, and mobile checks. Static translations avoid the converter's positional fence handling; `random-values.py` avoids shadowing Python's library.
+- Step 4: **In progress** — publish to the portfolio and verify public pages/downloads; provide submission links. No teacher forms submitted; no awarded grades or peer feedback claimed.
+
 ## 2026-09-28 — 3.12 Calling Procedures homework
 
 - Goal: publish both current Popcorn tasks, the dispatch homework, knowledge-check answers, and evidence supporting a 1.00/1.00 self-assessment.

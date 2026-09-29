@@ -1,0 +1,4 @@
+# Hypothetical season-table and scoreboard app.
+# json, datetime, and statistics are standard library modules; omit them.
+pandas
+Flask==3.1.3

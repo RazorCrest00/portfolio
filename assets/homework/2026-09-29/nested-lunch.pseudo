@@ -1,0 +1,29 @@
+PROCEDURE lunchPlan(lunchPacked, practiceAfterSchool)
+{
+    IF (lunchPacked)
+    {
+        IF (practiceAfterSchool)
+        {
+            RETURN("Bring packed lunch and an extra practice snack.")
+        }
+        ELSE
+        {
+            RETURN("Bring packed lunch; no practice snack needed.")
+        }
+    }
+    ELSE
+    {
+        IF (practiceAfterSchool)
+        {
+            RETURN("Buy lunch and an extra practice snack.")
+        }
+        ELSE
+        {
+            RETURN("Buy lunch; no practice snack needed.")
+        }
+    }
+}
+DISPLAY(lunchPlan(TRUE, TRUE))
+DISPLAY(lunchPlan(TRUE, FALSE))
+DISPLAY(lunchPlan(FALSE, TRUE))
+DISPLAY(lunchPlan(FALSE, FALSE))
