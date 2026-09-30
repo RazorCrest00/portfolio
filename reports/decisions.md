@@ -1,5 +1,12 @@
 # About Page Personalization Decisions
 
+## 2026-09-30 — Submission justification consistency
+
+- Supplement the existing rubric tables with a topic-specific rationale, meaningful extension evidence, an independently verified reviewer challenge, and a concise submission-ready justification across all 13 assignments. The user's later explicit IPYNB request takes priority: add an executed 3.17 notebook with two code cells, explanations, and saved outputs, retaining the original public page. Provide all 13 notebooks individually and in a verified ZIP archive.
+- Preserve all original notebook cells, code, saved outputs, weights, and attribution. Put the added prose after the final code cell so the converter's positional runner handling remains unchanged. No shared CSS, runtime, converter, or dependency changes.
+- Verify each written challenge by executing the submitted solution with changed inputs or arguments. The new standard-library verifier contains expected results, not duplicate implementations. The Random Values challenge fixes the random choices to reveal state transitions; the Libraries challenge distinguishes a zero observation from absent data.
+- Retain limits on claims: 3.09 participation credit needs classroom evidence, Lists uses labeled sample survey data, and 3.13 has no numeric rubric. Stronger explanations do not manufacture awarded grades or extra rubric points.
+
 ## 2026-09-29 — Remaining Python homework
 
 - Follow all eight live assignments as checked September 29. The active 3.09 version is Safe Passage Heals; 3.14 uses season statistics and Flask, not the older cached study-session exercise. Store exact assignment URLs and fetched HTML hashes in `python-homework-2026-09-29.json`.

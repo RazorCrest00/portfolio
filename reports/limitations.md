@@ -1,5 +1,9 @@
 # Known Limitations
 
+## 2026-09-30 — Submission justification consistency
+
+- The new evidence strengthens rubric-based self-assessments; it cannot establish an awarded grade, classroom participation, or authentic class survey responses. Existing qualification notes are preserved. These additions explain and test the submitted solutions, without claiming the assignment rubrics were reissued or rechecked on September 30.
+
 ## 2026-09-29 — Remaining Python homework
 
 - Full-score figures are evidence-backed self-assessments, not awarded grades. 3.09 covers 1.00/1.00 of submitted work but leaves the separate 0.10 participation point unclaimed without classroom evidence. 3.13 publishes exercises without numeric weights; its page records complete coverage instead of inventing a rubric.

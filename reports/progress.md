@@ -1,5 +1,11 @@
 # About Page Personalization Progress
 
+## 2026-09-30 — Consistent justification across Python submissions
+
+- Step 1: **Done** — reviewed all 12 Python homework notebooks and the required 3.17 Markdown submission. Existing solutions already include extensions; the newest seven need stronger explanations tying them to credit.
+- Step 2: **Done** — added topic-specific full-credit rationales, extension evidence, verified input-change challenges, and short submission summaries to all 13. Following the user's explicit IPYNB clarification, 3.17 also has an executed notebook. The checklist links all 13 notebooks individually and in a ZIP archive.
+- Step 3: **In progress** — all 13 new challenges and 55 saved notebook outputs pass. All 12 original notebooks preserve every prior cell and metadata field. All 13 notebook pages pass rendered evidence/source checks at desktop/mobile widths, and both new 3.17 browser runners execute correctly. Conversion and Jekyll build pass. Publish and verify public files next.
+
 ## 2026-09-29 — Remaining eight Python homework topics
 
 - Goal: complete and publish 3.05, 3.06, 3.07, 3.09, 3.13, 3.14, 3.15, and 3.17, with current assignment coverage, runnable examples, explanations, and full-score self-assessments supported by evidence.

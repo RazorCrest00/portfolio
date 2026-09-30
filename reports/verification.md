@@ -1,5 +1,12 @@
 # About Page Verification
 
+## 2026-09-30 — Submission justification consistency
+
+- Pass: `python3 scripts/test_submission_justifications.py` verifies all 13 new written challenges against actual submitted code. Checks cover changed arithmetic inputs, false string predicates, independent Boolean rejection causes, scoring boundaries, nested guards, early-exit totals, tie rules, new list categories, argument binding, recipe scaling, zero-valued observations, stateful duplicate rejection, and three growth patterns.
+- Pass: all 12 notebooks validate with `nbformat`; all 53 saved code outputs match isolated re-execution. Removing the single new evidence cell from each notebook yields a structure identical to its prior committed version, including code, IDs, outputs, and metadata.
+- Pass: following the IPYNB clarification, the new 3.17 notebook validates and both saved outputs reproduce. All 13 notebooks contain 55 verified code-cell outputs in total. The ZIP archive contains exactly those 13 `.ipynb` files with identical bytes; the checklist links each one directly.
+- Pass: notebook conversion and Jekyll build. All 13 notebook pages display the new evidence sections at 1440 and 390 pixels without horizontal page overflow; all 55 runner source payloads match their notebook cells. Both new 3.17 browser runners produce their saved results. Desktop/mobile screenshots inspected. No CSS, Sass, shared converter, runtime, or dependency files changed.
+
 ## 2026-09-29 — Remaining Python homework
 
 - Pass: all eight current assignments mapped to their required exercises, explanations, tests, and published rubric rows. Live client-side quizzes returned 4/4 for 3.05 (A,C,A,B), 3.09 (C,B,C,B), and 3.15 (C,B,B,B). The 3.17 written key is a 4/4 self-check (A,B,B,C). No assignment form submitted.
