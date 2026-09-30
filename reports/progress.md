@@ -4,7 +4,7 @@
 
 - Step 1: **Done** — reviewed all 12 Python homework notebooks and the required 3.17 Markdown submission. Existing solutions already include extensions; the newest seven need stronger explanations tying them to credit.
 - Step 2: **Done** — added topic-specific full-credit rationales, extension evidence, verified input-change challenges, and short submission summaries to all 13. Following the user's explicit IPYNB clarification, 3.17 also has an executed notebook. The checklist links all 13 notebooks individually and in a ZIP archive.
-- Step 3: **In progress** — all 13 new challenges and 55 saved notebook outputs pass. All 12 original notebooks preserve every prior cell and metadata field. All 13 notebook pages pass rendered evidence/source checks at desktop/mobile widths, and both new 3.17 browser runners execute correctly. Conversion and Jekyll build pass. Publish and verify public files next.
+- Step 3: **Done** — all 13 new challenges and 55 saved notebook outputs pass. All 12 original notebooks preserve every prior cell and metadata field. Conversion and Jekyll build pass. Commit `9ffa7c7b5d53d8f80b4844892660bc637edd6e78` deployed successfully through run `36763319354`. All 13 public notebook pages pass rendered evidence/source checks at desktop/mobile widths, and both new 3.17 browser runners execute correctly. All 13 raw IPYNBs and the ZIP match the tested files exactly. All three steps are complete; no teacher form was submitted.
 
 ## 2026-09-29 — Remaining eight Python homework topics
 

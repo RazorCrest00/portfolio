@@ -6,6 +6,7 @@
 - Pass: all 12 notebooks validate with `nbformat`; all 53 saved code outputs match isolated re-execution. Removing the single new evidence cell from each notebook yields a structure identical to its prior committed version, including code, IDs, outputs, and metadata.
 - Pass: following the IPYNB clarification, the new 3.17 notebook validates and both saved outputs reproduce. All 13 notebooks contain 55 verified code-cell outputs in total. The ZIP archive contains exactly those 13 `.ipynb` files with identical bytes; the checklist links each one directly.
 - Pass: notebook conversion and Jekyll build. All 13 notebook pages display the new evidence sections at 1440 and 390 pixels without horizontal page overflow; all 55 runner source payloads match their notebook cells. Both new 3.17 browser runners produce their saved results. Desktop/mobile screenshots inspected. No CSS, Sass, shared converter, runtime, or dependency files changed.
+- Pass after publication: [GitHub Actions run 36763319354](https://github.com/RazorCrest00/portfolio/actions/runs/36763319354) deployed `9ffa7c7b5d53d8f80b4844892660bc637edd6e78`. Public checks confirm all 13 notebook pages, 55 unchanged runner sources, two executed 3.17 runners, desktop/mobile evidence, and 13 direct notebook links. All 13 downloaded IPYNBs match local bytes and include their justification cell. The public 83,277-byte ZIP matches the tested archive and contains exactly the 13 matching notebook files.
 
 ## 2026-09-29 — Remaining Python homework
 
