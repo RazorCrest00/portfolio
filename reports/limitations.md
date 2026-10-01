@@ -1,5 +1,11 @@
 # Known Limitations
 
+## 2026-10-01 — Sass notebook homework
+
+- Six graded assignments plus an ungraded reference companion. Scores are evidence-backed self-assessments, not awarded grades. Toggles' highest stated level is .92. Containers' optional .20 custom-SCSS bonus is not claimed because the requested no-custom-CSS constraint is retained. Popcorn coding work does not prove live classroom participation.
+- These homework pages load the existing published OCS stylesheet because the portfolio predates the lesson grammar. That stylesheet and the editor libraries require network access and can change upstream. Standalone Jupyter renders saved semantic HTML; its theme may differ, and JavaScript requires notebook trust. The existing runner output scrolls for long content; Reset clears output and Clear Storage restores code.
+- The only inline style is the explicit fractional-grid exercise exception. No authored stylesheet, shared runner/converter, or dependency configuration changed. The resource links are the assignment's directory destination; the local mood actions, Rotary schedule/status entries and UESL match text are classroom demos, not live services or event verification.
+
 ## 2026-09-30 — Submission justification consistency
 
 - The new evidence strengthens rubric-based self-assessments; it cannot establish an awarded grade, classroom participation, or authentic class survey responses. Existing qualification notes are preserved. These additions explain and test the submitted solutions, without claiming the assignment rubrics were reissued or rechecked on September 30.

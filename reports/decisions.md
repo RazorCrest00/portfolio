@@ -1,5 +1,13 @@
 # About Page Personalization Decisions
 
+## 2026-10-01 — Sass notebook homework
+
+- Preserve each assignment's scenario and exact requirements. Six graded notebooks plus a non-graded guide companion; Markdown frontmatter and %%html/UI_RUNNER cells follow the live submission instructions.
+- Reuse the published OCS stylesheet on these pages because this portfolio predates the required ocs__ grammar. Do not edit shared Sass, CSS, converters, or runners. Reuse the existing UI runner include for editable browser labs.
+- Keep executed notebook output for download, but capture duplicate converter output during the site build and render each exercise once through the existing runner include. Enable the existing CodeMirror flag. Persistent labels replace low-contrast placeholders; no style override is introduced.
+- Follow the explicit fr exercise exception for its one grid-template-columns attribute. Omit Containers' optional custom SCSS bonus to honor the user's no-custom-CSS constraint; target the complete 1.0 base rubric. Toggles' published top rubric is 0.92, not 1.0.
+- Justify credit with demonstrable coverage; do not fabricate classroom participation, peer review, or awarded grades. Credit existing OCS infrastructure and AI assistance. Preserve real-world assignment examples as classroom demonstrations.
+
 ## 2026-09-30 — Submission justification consistency
 
 - Supplement the existing rubric tables with a topic-specific rationale, meaningful extension evidence, an independently verified reviewer challenge, and a concise submission-ready justification across all 13 assignments. The user's later explicit IPYNB request takes priority: add an executed 3.17 notebook with two code cells, explanations, and saved outputs, retaining the original public page. Provide all 13 notebooks individually and in a verified ZIP archive.

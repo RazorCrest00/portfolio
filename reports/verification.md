@@ -1,5 +1,14 @@
 # About Page Verification
 
+## 2026-10-01 — Sass notebook homework
+
+- Pass: seven valid IPYNBs, 17 executed %%html cells with matching saved HTML output; ZIP contains exactly the same seven notebooks. `venv/bin/python3 scripts/test_sass_homework.py` checks all six assignment structures, allowed grammar, semantics, labels, original scenarios and rejects seven intentional regressions.
+- Pass: all notebook conversions and Jekyll build. Each exercise uses the existing UI runner include with CodeMirror enabled. A notebook-local Liquid capture prevents the converter's duplicate saved HTML from producing duplicate DOM IDs; shared runtime/converter files are unchanged.
+- Pass: `scripts/test_sass_homework_browser.cjs` against the local portfolio verifies all 17 runners, edit/run/restore on every cell, output reset on each main lab, no duplicate IDs, and no uncaught page errors. Inputs distinguish missing, malformed and valid email and label focus; buttons respond to Enter/Space; Toggles passes all eight combinations, real panel visibility, live counts, keyboard Space and reset; Grids verifies the 2:1 track ratio and that removing the title modifier changes the live checklist from PASS to FIX.
+- Pass: all seven pages at 1440px and 390px have no horizontal page overflow. Containers changes from three to two columns using existing OCS styles. Desktop/mobile screenshots reviewed in two bounded rounds. Removed redundant low-contrast placeholders in favor of persistent labels. Existing output panels scroll for longer content. Impeccable detector returned no findings; notebook-specific DOM tests supplement its limited IPYNB coverage.
+- Pass: live Grids quiz returned `MCQ Grids: 4/4 | answers: A,B,C,D`. No assignment form or classroom message sent. Source URLs/hashes and stylesheet hash recorded in `sass-homework-2026-10-01.json`.
+- Publication verification pending.
+
 ## 2026-09-30 — Submission justification consistency
 
 - Pass: `python3 scripts/test_submission_justifications.py` verifies all 13 new written challenges against actual submitted code. Checks cover changed arithmetic inputs, false string predicates, independent Boolean rejection causes, scoring boundaries, nested guards, early-exit totals, tie rules, new list categories, argument binding, recipe scaling, zero-valued observations, stateful duplicate rejection, and three growth patterns.

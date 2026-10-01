@@ -1,5 +1,13 @@
 # About Page Personalization Progress
 
+## 2026-10-01 — Sass notebook homework
+
+- Goal: complete the six graded Sass assignments as IPYNBs, with saved HTML outputs, actual browser demonstrations, rubric evidence, and submission links. Add a reference-guide companion without inventing a grade.
+- Step 1: **Done** — checked live Typography, Grids, Containers, Buttons, Inputs, Toggles and the reference guide.
+- Step 2: **Done** — seven notebooks with 17 executed cells, all required exercises, rubric evidence, source links, meaningful accessibility/behavior extensions and an individual/bundled download index.
+- Step 3: **Done** — notebook/ZIP checks, seven regression checks, live Grids quiz 4/4, conversion, Jekyll build and all 17 real browser runners pass; desktop/mobile review complete.
+- Step 4: **In progress** — publish the notebooks, bundle and index to the portfolio; verify public artifacts.
+
 ## 2026-09-30 — Consistent justification across Python submissions
 
 - Step 1: **Done** — reviewed all 12 Python homework notebooks and the required 3.17 Markdown submission. Existing solutions already include extensions; the newest seven need stronger explanations tying them to credit.

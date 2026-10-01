@@ -1,0 +1,119 @@
+{
+  "checked": "2026-10-01",
+  "sources": {
+    "guide": {
+      "name": "guide",
+      "url": "https://pages.opencodingsociety.com/sass/guide",
+      "sha256": "1df5d5c672bc7bdb56c23d60ac6663034d481996033a9bdc92271d6b9be80d83",
+      "bytes": 80506
+    },
+    "grids": {
+      "name": "grids",
+      "url": "https://pages.opencodingsociety.com/sass/grids/",
+      "sha256": "68dbcfe41be92042fd1d4a05dcf6a37d268ad5b77b6e31e1804b842bca6280a9",
+      "bytes": 127422
+    },
+    "containers": {
+      "name": "containers",
+      "url": "https://pages.opencodingsociety.com/navigation/sass/containers/lesson",
+      "sha256": "38b6f4d353eb93565f86143ab05179d03d7d407103f7ff36b6a2c56903ed4d0a",
+      "bytes": 118431
+    },
+    "buttons": {
+      "name": "buttons",
+      "url": "https://pages.opencodingsociety.com/sass/buttons",
+      "sha256": "7f6fe2f019287ac7d85e5dfc624bd08cc02555f339d86683c28c8f364a8aef82",
+      "bytes": 100654
+    },
+    "inputs": {
+      "name": "inputs",
+      "url": "https://pages.opencodingsociety.com/sass/inputs/",
+      "sha256": "2013c32798dae0cca306dffa0c6ca637fe9e2c4cfba5d1221188d1b496501c1a",
+      "bytes": 120747
+    },
+    "toggles": {
+      "name": "toggles",
+      "url": "https://pages.opencodingsociety.com/sass/toggles",
+      "sha256": "14a20de87d5464ff2887d0d2defa09c5269abed0bfc79a201fc1903720b32c20",
+      "bytes": 99590
+    },
+    "typography": {
+      "name": "typography",
+      "url": "https://pages.opencodingsociety.com/sass/typography",
+      "sha256": "30f784a6450b5ec16ee90cc0796809c878718db7bc9721f182bc0cee2cb6ad71",
+      "bytes": 101104
+    }
+  },
+  "submissions": [
+    {
+      "key": "typography",
+      "title": "OCS Typography",
+      "file": "_notebooks/homework/sass/2026-10-01-sass-typography-hw.ipynb",
+      "url": "https://razorcrest00.github.io/portfolio/sass/typography-hw/",
+      "lesson": "https://pages.opencodingsociety.com/sass/typography",
+      "score": "1.00/1.00",
+      "cells": 2
+    },
+    {
+      "key": "inputs",
+      "title": "OCS Inputs",
+      "file": "_notebooks/homework/sass/2026-10-01-sass-inputs-hw.ipynb",
+      "url": "https://razorcrest00.github.io/portfolio/sass/inputs-hw/",
+      "lesson": "https://pages.opencodingsociety.com/sass/inputs/",
+      "score": "1.00/1.00",
+      "cells": 2
+    },
+    {
+      "key": "buttons",
+      "title": "OCS Buttons",
+      "file": "_notebooks/homework/sass/2026-10-01-sass-buttons-hw.ipynb",
+      "url": "https://razorcrest00.github.io/portfolio/sass/buttons-hw/",
+      "lesson": "https://pages.opencodingsociety.com/sass/buttons",
+      "score": "1.00/1.00",
+      "cells": 5
+    },
+    {
+      "key": "containers",
+      "title": "OCS Containers",
+      "file": "_notebooks/homework/sass/2026-10-01-sass-containers-hw.ipynb",
+      "url": "https://razorcrest00.github.io/portfolio/sass/containers-hw/",
+      "lesson": "https://pages.opencodingsociety.com/navigation/sass/containers/lesson",
+      "score": "1.00/1.00",
+      "cells": 2
+    },
+    {
+      "key": "grids",
+      "title": "OCS Grids",
+      "file": "_notebooks/homework/sass/2026-10-01-sass-grids-hw.ipynb",
+      "url": "https://razorcrest00.github.io/portfolio/sass/grids-hw/",
+      "lesson": "https://pages.opencodingsociety.com/sass/grids/",
+      "score": "1.00/1.00",
+      "cells": 3
+    },
+    {
+      "key": "toggles",
+      "title": "OCS Toggles",
+      "file": "_notebooks/homework/sass/2026-10-01-sass-toggles-hw.ipynb",
+      "url": "https://razorcrest00.github.io/portfolio/sass/toggles-hw/",
+      "lesson": "https://pages.opencodingsociety.com/sass/toggles",
+      "score": ".92 (highest published level)",
+      "cells": 2
+    },
+    {
+      "key": "guide",
+      "title": "CSS to Sass Guide Companion",
+      "file": "_notebooks/homework/sass/2026-10-01-sass-guide-hw.ipynb",
+      "url": "https://razorcrest00.github.io/portfolio/sass/guide-hw/",
+      "lesson": "https://pages.opencodingsociety.com/sass/guide",
+      "score": "complete reference coverage (ungraded)",
+      "cells": 1
+    }
+  ],
+  "grid_mcq": "MCQ Grids: 4/4 | answers: A,B,C,D",
+  "grid_mcq_evidence": "Live lesson client-side quiz completed October 1, 2026; no assignment form submitted.",
+  "stylesheet": {
+    "url": "https://pages.opencodingsociety.com/assets/css/style.css",
+    "sha256": "fc677a385019eaf10130d75ff787519a16e8e6780254a0561d4cde8c8a5a71af",
+    "custom_styles_added": false
+  }
+}
