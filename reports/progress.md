@@ -6,7 +6,7 @@
 - Step 1: **Done** — checked live Typography, Grids, Containers, Buttons, Inputs, Toggles and the reference guide.
 - Step 2: **Done** — seven notebooks with 17 executed cells, all required exercises, rubric evidence, source links, meaningful accessibility/behavior extensions and an individual/bundled download index.
 - Step 3: **Done** — notebook/ZIP checks, seven regression checks, live Grids quiz 4/4, conversion, Jekyll build and all 17 real browser runners pass; desktop/mobile review complete.
-- Step 4: **In progress** — publish the notebooks, bundle and index to the portfolio; verify public artifacts.
+- Step 4: **Done** — commit `d58a0570a5ec9248c8bcfc3aed03a9986aa6ee76` deployed through successful GitHub Actions run `36901542099`. All 17 public browser runners, semantic/interactive checks, desktop/mobile layouts, seven notebook downloads and the ZIP pass. All four steps complete; no teacher forms or class messages submitted.
 
 ## 2026-09-30 — Consistent justification across Python submissions
 

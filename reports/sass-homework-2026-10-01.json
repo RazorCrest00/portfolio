@@ -115,5 +115,168 @@
     "url": "https://pages.opencodingsociety.com/assets/css/style.css",
     "sha256": "fc677a385019eaf10130d75ff787519a16e8e6780254a0561d4cde8c8a5a71af",
     "custom_styles_added": false
+  },
+  "verification": {
+    "commit": "d58a0570a5ec9248c8bcfc3aed03a9986aa6ee76",
+    "deployment": "https://github.com/RazorCrest00/portfolio/actions/runs/36901542099",
+    "public_browser": {
+      "base": "https://razorcrest00.github.io/portfolio",
+      "results": [
+        {
+          "key": "typography",
+          "outputs": 2,
+          "runner": true,
+          "editReset": true,
+          "sizes": [
+            {
+              "width": 1440,
+              "scroll": 1440
+            },
+            {
+              "width": 390,
+              "scroll": 390
+            }
+          ]
+        },
+        {
+          "key": "inputs",
+          "outputs": 2,
+          "runner": true,
+          "editReset": true,
+          "sizes": [
+            {
+              "width": 1440,
+              "scroll": 1440
+            },
+            {
+              "width": 390,
+              "scroll": 390
+            }
+          ]
+        },
+        {
+          "key": "buttons",
+          "outputs": 5,
+          "runner": true,
+          "editReset": true,
+          "sizes": [
+            {
+              "width": 1440,
+              "scroll": 1440
+            },
+            {
+              "width": 390,
+              "scroll": 390
+            }
+          ]
+        },
+        {
+          "key": "containers",
+          "outputs": 2,
+          "runner": true,
+          "editReset": true,
+          "sizes": [
+            {
+              "width": 1440,
+              "scroll": 1440
+            },
+            {
+              "width": 390,
+              "scroll": 390
+            }
+          ]
+        },
+        {
+          "key": "grids",
+          "outputs": 3,
+          "runner": true,
+          "editReset": true,
+          "sizes": [
+            {
+              "width": 1440,
+              "scroll": 1440
+            },
+            {
+              "width": 390,
+              "scroll": 390
+            }
+          ]
+        },
+        {
+          "key": "toggles",
+          "outputs": 2,
+          "runner": true,
+          "editReset": true,
+          "sizes": [
+            {
+              "width": 1440,
+              "scroll": 1440
+            },
+            {
+              "width": 390,
+              "scroll": 390
+            }
+          ]
+        },
+        {
+          "key": "guide",
+          "outputs": 1,
+          "runner": true,
+          "editReset": true,
+          "sizes": [
+            {
+              "width": 1440,
+              "scroll": 1440
+            },
+            {
+              "width": 390,
+              "scroll": 390
+            }
+          ]
+        }
+      ]
+    },
+    "public_downloads": [
+      {
+        "file": "2026-10-01-sass-typography-hw.ipynb",
+        "bytes": 12699,
+        "sha256": "83e60dcdbb463943871efac44b44963e5b86b46c8f6d3ca2b7e66209ca3b9bbf"
+      },
+      {
+        "file": "2026-10-01-sass-inputs-hw.ipynb",
+        "bytes": 13015,
+        "sha256": "f63db0792d614e69abe710f3283135e800094fc512abc1e5d9565557f305f184"
+      },
+      {
+        "file": "2026-10-01-sass-buttons-hw.ipynb",
+        "bytes": 19767,
+        "sha256": "65031f7f110dfa32bb9ba4eeb72eaf18c72190e2a12c409a9d9997ac3f23029f"
+      },
+      {
+        "file": "2026-10-01-sass-containers-hw.ipynb",
+        "bytes": 17069,
+        "sha256": "4571c12278a0689d0cddbf946c67e5f20cc646810900ebac3d937d06fefd408e"
+      },
+      {
+        "file": "2026-10-01-sass-grids-hw.ipynb",
+        "bytes": 21797,
+        "sha256": "6b5a3951f4223701ebc6945469872057db4ac101abfa6d0f7187baaf0c9d9afa"
+      },
+      {
+        "file": "2026-10-01-sass-toggles-hw.ipynb",
+        "bytes": 22030,
+        "sha256": "196a4ef2d2a42856b8d7d1e9cc1a5b17e8a98d4bc2eed552a2bd3f09037feae9"
+      },
+      {
+        "file": "2026-10-01-sass-guide-hw.ipynb",
+        "bytes": 10790,
+        "sha256": "06cb6f2334494cab0451e9bb8749e09836c9d417289c8d87ea9db12865b3a6d9"
+      },
+      {
+        "file": "sass-homework-notebooks.zip",
+        "bytes": 31996,
+        "sha256": "3a0f8e292a2c64da504913add6695136679dfa7773bfbe81879ea1bef3dfb786"
+      }
+    ]
   }
 }
