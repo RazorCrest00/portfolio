@@ -87,3 +87,10 @@
 - Completed implementation and local verification: one notebook, five independently executable cells, saved outputs, eight changed-input cases, a successful Jekyll build, and desktop/mobile inspection.
 - All four plan steps are **Done**. Commit `d188541` was published to `RazorCrest00/portfolio/main`; GitHub Actions run `35644755294` completed build and deployment successfully. The public page and notebook download both return HTTP 200, and all five runners also pass on the live site.
 - Submit the notebook `_notebooks/homework/2026-09-21-strings-intercepters-hw.ipynb` for 3.04 Strings. Public page: https://razorcrest00.github.io/portfolio/python/strings-intercepters-hw .
+
+## 2026-10-12 — 2018 practice exam reflection
+
+- Done: added `_posts/2026-10-12-2018-practice-exam-reflection.md` and `images/reflections/2018-practice-exam-results.png` to Adhvay Iyer's portfolio blog.
+- Output: six main reflection paragraphs, a 63/66 (95.5%) score, the original results image, explicitly labeled test and classroom strengths/weaknesses, teamwork and Google-use context, and a measurable review plan. The classroom weakness addresses checking sports after assigned work and sets a five-class improvement plan. The revised AI evaluation evidence and 0.92 self-assessment form a seven-paragraph, smaller-text section at the bottom, collapsed by default and available to every reader.
+- Verification passed: Jekyll build, generated post and blog-listing checks, image integrity, score checks, desktop and 390px browser inspection, and whitespace validation.
+- Scope: saved locally and previewed; no commit, push, or public deployment performed. No implementation work remains.

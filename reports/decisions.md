@@ -63,3 +63,13 @@
 - Justify rubric coverage using executable evidence and actual outputs; disclose AI assistance and do not claim independent authorship, peer feedback, or a guaranteed grade.
 - Preserve the existing site theme, layout, configuration, and unrelated portfolio work.
 - Enable the existing Pyodide executor through a page-level opt-in. The remote OCS runner does not return an allowed-origin header for this GitHub Pages domain, so the homework executes Python locally in the browser. Existing include-level opt-ins keep working.
+
+## 2026-10-12 — 2018 practice exam reflection
+
+- Use a standard Markdown blog post with a unique canonical ID so the existing blog listing includes it; preserve the portfolio layout and navigation.
+- Base numerical claims on the attached results, distinguish unassessed sections from strengths, and qualify possible explanations for weaker performance.
+- Use the user's account of teamwork and Google searches; frame the two proposed AI-help topics as future review instead of inventing past tool use.
+- Present 0.92/1.00 as a reasoned, rubric-dependent reflection self-assessment, separate from the 95.5% exam result. Preserve the original screenshot and provide a full-resolution link.
+- Keep the expanded supporting case compact through a native disclosure at the bottom with smaller, readable text. Make it available to all readers; do not include concealed grader-targeted instructions or fabricated achievements.
+- Add the user's reported sports distraction as a specific classroom weakness, with a prospective five-class plan for project improvements. Explicitly label strengths and weaknesses in both test and classroom sections.
+- Tailor the ending to AI evaluation through criterion-to-evidence mapping, separating screenshot-backed scores, personal accounts, and future commitments. Disclose AI writing assistance and retain the rubric-dependent nature of the proposed score.

@@ -102,3 +102,14 @@
 - Existing unrelated resource warnings: optional site analytics/completion scripts are absent, the local SDK server is unavailable, and a CDN selection stylesheet fails to load. These do not prevent the verified homework runners from executing.
 - Pass after publication: [GitHub Actions run 35644755294](https://github.com/RazorCrest00/portfolio/actions/runs/35644755294) completed successfully; public page and raw notebook return HTTP 200. Downloaded notebook bytes match the verified source.
 - Pass on the public site: all five runners reproduce their notebook outputs using browser-local Python; desktop/mobile checks and the no-remote-execution assertion pass. Notebook outputs are saved in the downloadable file; the webpage presents fresh results after Run.
+
+## 2026-10-12 — 2018 practice exam reflection
+
+- Pass: `bundle exec jekyll build` renders the final post and its blog-listing link. The initial sandboxed attempt could not resolve the configured remote theme; the permitted network-enabled retry succeeded.
+- Pass: source and generated HTML contain Adhvay Iyer, 63/66 (95.5%), and the three screenshot-backed results: Using Programs with Data 50%, Identifying and Correcting Errors 75%, Calling Procedures 80%.
+- Pass: six main reflection paragraphs include one test-taking narrative paragraph and explicitly labeled test and classroom strengths/weaknesses; seven AI evaluation evidence paragraphs are in a separate expandable section. No individual exam questions or answers are reproduced.
+- Pass: the copied 3024×1360 image is byte-identical to the user attachment and the generated site's image; the figure has alternative text, a caption, and a full-resolution link.
+- Pass: browser inspection shows the portfolio styling, readable paragraphs, author, score, and results image. At a 390px viewport, the document width is 390px and the loaded image scales to 354px without horizontal overflow.
+- Pass: `git diff --check`. Publication and an actual AI grading result were not part of these checks.
+- Revision pass: rebuilt the site and checked that the final self-assessment is collapsed by default, expands on click, and computes to 14px text versus the main article's 16px. Its supporting criteria are explicitly labeled as a self-assessment rather than an official rubric.
+- Classroom revision pass: Jekyll build, content checks, and desktop/mobile inspection confirm the sports distraction, opportunity cost, five-class project plan, and revised AI evaluation section. Expanded assessment remains 14px, with no horizontal overflow at 1280px or 390px. The disclosure was returned to its collapsed state after verification.
