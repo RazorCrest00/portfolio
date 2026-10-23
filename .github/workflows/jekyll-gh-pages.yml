@@ -27,7 +27,8 @@ env:
 jobs:
   # Build job
   build:
-    runs-on: ubuntu-latest
+    # Ruby 3.1 is available on the runner used by the last successful build.
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v5
